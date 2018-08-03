@@ -236,32 +236,32 @@ This function is discontinuous (but right continuous) at any integer $x$.
 \end{columns}
 \end{frame}
 
-\begin{frame}
-\frametitle{Other Useful Continuity Notions}
-\begin{itemize}
-\item \textbf{Uniform continuity}: \\
-For all $\epsilon > 0$ there exists a $\delta > 0$ such that for any $x,y\in X$ with $\vert x-y \vert < \delta$ we have $\vert f(x)-f(y)\vert < \epsilon$.\\
-(A global property rather than a local one: as long as $x,y$ are sufficiently close, we can guarantee that $f(x),f(y)$ are close.)
-\vspace*{0.15in}
-\item \textbf{Lipschitz continuity}: \\
-There exists a constant $L$ such that for any $x,y\in X$, we have $\vert f(x)-f(y)\vert \leq L \vert x-y \vert$.
-\end{itemize}
+% \begin{frame}
+% \frametitle{Other Useful Continuity Notions}
+% \begin{itemize}
+% \item \textbf{Uniform continuity}: \\
+% For all $\epsilon > 0$ there exists a $\delta > 0$ such that for any $x,y\in X$ with $\vert x-y \vert < \delta$ we have $\vert f(x)-f(y)\vert < \epsilon$.\\
+% (A global property rather than a local one: as long as $x,y$ are sufficiently close, we can guarantee that $f(x),f(y)$ are close.)
+% \vspace*{0.15in}
+% \item \textbf{Lipschitz continuity}: \\
+% There exists a constant $L$ such that for any $x,y\in X$, we have $\vert f(x)-f(y)\vert \leq L \vert x-y \vert$.
+% \end{itemize}
 
-\end{frame}
+% \end{frame}
 
-\begin{frame}
-\frametitle{Continuity: Exercise}
-Which statement(s) of the following is incorrect?
-\begin{itemize}
-\item[A] $f(x) = x^2$, $x\in \mathbb{R}$ is not uniformly continuous, but $f(x) = x^2$, $x\in [0,245]$ is Lipschitz continuous;
-\item[B] $f(x) = x^{1/3}$, $x \in [0,1]$ is Lipschitz continuous;
-\item[C] $f(x) = x^{3/2}\sin (\frac{1}{x})$ ($x\neq 0$), $f(0)=0$, $x\in [0,1]$ is uniformly continuous as well as Lipschitz continuous; 
-\item[D] Every continuous function defined on $[-1,1]$ is uniformly continuous;
-\item[E] A continuous function $f$ is defined on $[-5,5]$ and satisfies $f(-2) = -3, f(1) = 4$, then there must exist a number $x_0 \in [-2,1]$ such that $f(x_0)=0$.
-\end{itemize}
-% Answer: B C \\
-% Choice E: ``Intermediate Value Theorem''.
-\end{frame}
+% \begin{frame}
+% \frametitle{Continuity: Exercise}
+% Which statement(s) of the following is incorrect?
+% \begin{itemize}
+% \item[A] $f(x) = x^2$, $x\in \mathbb{R}$ is not uniformly continuous, but $f(x) = x^2$, $x\in [0,245]$ is Lipschitz continuous;
+% \item[B] $f(x) = x^{1/3}$, $x \in [0,1]$ is Lipschitz continuous;
+% \item[C] $f(x) = x^{3/2}\sin (\frac{1}{x})$ ($x\neq 0$), $f(0)=0$, $x\in [0,1]$ is uniformly continuous as well as Lipschitz continuous; 
+% \item[D] Every continuous function defined on $[-1,1]$ is uniformly continuous;
+% \item[E] A continuous function $f$ is defined on $[-5,5]$ and satisfies $f(-2) = -3, f(1) = 4$, then there must exist a number $x_0 \in [-2,1]$ such that $f(x_0)=0$.
+% \end{itemize}
+% % Answer: B C \\
+% % Choice E: ``Intermediate Value Theorem''.
+% \end{frame}
 
 %------------------------------------------------
 \section{Derivative}
@@ -308,25 +308,23 @@ If both $f(x)$ and $g(x)$ are differentiable:
 \begin{columns}[t] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
 
 \column{.47\textwidth} % Left column and width
-1. The following figure shows the graphs of $f$, $f'$, $f''$, and $f'''$. Identify each curve.
-\vspace*{-0.2in}
-\begin{figure}[H]
-\centering
-\includegraphics[width=6cm]{Derivative-ex-1.png}
-%\caption{Plot of $y=f(x)$.}
-\end{figure}
-% Answer: d,c,b,a
+1. Find the derivatives of the following functions
+\begin{itemize}
+\item $f(x) = x e^x$;
+\item $f(x) = 1 - \cos^2 x$;
+\item $f(x) = \frac{\ln x}{x}$.
+\end{itemize}
 
 \column{.47\textwidth} % Right column and width
-2. $f(x) = \frac{1}{\sqrt{\gamma}} \exp \left(-\frac{(x-\mu)^2}{\gamma}\right)$ where constants $\gamma > 0$ and $\mu \in \mathbb{R}$, and $x\in \mathbb{R}$. Calculate $f'(x)$ and find $x_0 \in \mathbb{R}$ such that the tangent line of $f(x)$ at $x_0$ is horizontal.
-\\~\\
-3. Find $\lim_{x \rightarrow 0} (1+x)^{1/x}$.
+% 2. $f(x) = \frac{1}{\sqrt{\gamma}} \exp \left(-\frac{(x-\mu)^2}{\gamma}\right)$ where constants $\gamma > 0$ and $\mu \in \mathbb{R}$, and $x\in \mathbb{R}$. Calculate $f'(x)$ and find $x_0 \in \mathbb{R}$ such that the tangent line of $f(x)$ at $x_0$ is horizontal.
+%\\~\\
+2. Find $\lim_{x \rightarrow 0} (1+x)^{1/x}$.
 
 \end{columns}
 \end{frame}
 
 \begin{frame}
-\frametitle{Solution to Exercise 3}
+\frametitle{Solution to Exercise 2}
 Let $f(x) = \ln x$, then
 \begin{equation*}
 \begin{aligned}
@@ -404,23 +402,23 @@ Any local minimum of a convex function is also a global minimum; a strictly conv
 \begin{columns}[t] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
 
 \column{.47\textwidth} % Left column and width
-1. Are all Lipschitz continuous functions defined on $[-1,1]$ also differentiable on $(-1,1)$? If not, give a counterexample.
+% 1. Are all Lipschitz continuous functions defined on $[-1,1]$ also differentiable on $(-1,1)$? If not, give a counterexample.
+% \\~\\
+1. Calculate $\lim_{x \rightarrow 0} \frac{\sin x}{x}$ and $\lim_{x \rightarrow 0} \frac{\tan x}{x}$.
+% (hint: use the definition of derivatives)
 \\~\\
-2. Calculate $\lim_{x \rightarrow 0} \frac{\sin x}{x}$ and $\lim_{x \rightarrow 0} \frac{\tan x}{x}$.
-\\~\\
-3. Let $f(x) = \frac{1}{x}, x>0$. For every positive integer $n$, find $f^{(n)}(x)$.
-
-
-\column{.47\textwidth} % Right column and width
-4. Which following functions are convex?
+2. Which following functions are convex?
 \begin{itemize}
-\item $f_1(x) = \vert x \vert, x\in [-1,1]$;
-\item $f_2(x) = \ln(x^2+1), x \in \mathbb{R}$;
-\item $f_3(x) = e^{-x}, x\in \mathbb{R}$.
+\item[A] $f_1(x) = \vert x \vert, x\in [-1,1]$;
+\item[B] $f_2(x) = \ln(x^2+1), x \in \mathbb{R}$;
+\item[C] $f_3(x) = e^{-x}, x\in \mathbb{R}$.
 \end{itemize}
 % answer: A C
-~\\
-5. $f(x) = \frac{1}{\sqrt{\gamma}} \exp \left(-\frac{(x-\mu)^2}{\gamma^2}\right)$ where constants $\gamma > 0$ and $\mu \in \mathbb{R}$, and $x\in \mathbb{R}$. Find all the global maximums of $f(x)$.
+
+\column{.47\textwidth} % Right column and width
+3. Let $f(x) = \frac{1}{x}, x>0$. For every positive integer $n$, find $f^{(n)}(x)$.
+\\~\\
+4. $f(x) = \frac{1}{\sqrt{\gamma}} \exp \left(-\frac{(x-\mu)^2}{\gamma^2}\right)$ where constants $\gamma > 0$ and $\mu \in \mathbb{R}$, and $x\in \mathbb{R}$. Find all the global maximums of $f(x)$.
 
 \end{columns}
 \end{frame}
@@ -444,12 +442,19 @@ Any local minimum of a convex function is also a global minimum; a strictly conv
 3. Let $f(x) = x^{\alpha - 1}(1-x)^{\beta-1}, x\in (0,1)$, where $\alpha, \beta > 0$ are constants. Find all the minimums and maximums (if there are any) of $f$.
 
 \column{.47\textwidth} % Right column and width
-4. $f(x)$ is a convex function on $\mathbb{R}$, $P = (x_0,f(x_0))$ is a point on $f(x)$, and $l$ is the tangent line of the curve of $f(x)$ at $P$. Choose the correct statement(s).
-\begin{itemize}
-\item[A] $l$ must lie above or on the curve of $f(x)$;
-\item[B] $l$ must lie below or on the curve of $f(x)$;
-\item[C] $l$ can intersect with $f(x)$ at multiple points.
-\end{itemize}
+% 4. $f(x)$ is a convex function on $\mathbb{R}$, $P = (x_0,f(x_0))$ is a point on $f(x)$, and $l$ is the tangent line of the curve of $f(x)$ at $P$. Choose the correct statement(s).
+% \begin{itemize}
+% \item[A] $l$ must lie above or on the curve of $f(x)$;
+% \item[B] $l$ must lie below or on the curve of $f(x)$;
+% \item[C] $l$ can intersect with $f(x)$ at multiple points.
+% \end{itemize}
+4. The following figure shows the graphs of $f$, $f'$, $f''$, and $f'''$. Identify each curve.
+\vspace*{-0.2in}
+\begin{figure}[H]
+\centering
+\includegraphics[width=5.5cm]{Derivative-ex-1.png}
+\end{figure}
+% Answer: d,c,b,a
 
 \end{columns}
 \end{frame}
@@ -602,7 +607,7 @@ Commonly used tests for convergence:
 \item[(ii)] If $\sum b_n$ is divergent and $a_n \geq b_n$ for all $n$, then $\sum a_n$ is also divergent.
 \item Video example: \href{https://youtu.be/4yyLfrsSXQQ}{\textbf{famous proof that the harmonic series diverges}, by \textit{Khan Academy}}.
 \end{itemize}
-\item \textbf{The limit comparison test}: Suppose that $\sum a_n$ and $\sum b_n$ are series with positive terms. If $\lim_{n \rightarrow \infty} \frac{a_n}{b_n} = c$ where $c$ is a finite positive number, then either both series converge or both diverge.
+%\item \textbf{The limit comparison test}: Suppose that $\sum a_n$ and $\sum b_n$ are series with positive terms. If $\lim_{n \rightarrow \infty} \frac{a_n}{b_n} = c$ where $c$ is a finite positive number, then either both series converge or both diverge.
 \item \href{https://youtu.be/xRyXz_UZ14Q}{\textbf{The integral test} (by \textit{Khan Academy})}.
 \item \textbf{The alternating series test}: If the alternating series $\sum_{n=1}^{\infty} (-1)^{n-1} b_n$ ($b_n > 0$) satisfies (i) $b_{n+1} \leq b_n$ for all $n$, and (ii) $\lim_{n \rightarrow \infty} b_n = 0$ then the series is convergent.
 \end{enumerate}
@@ -617,29 +622,29 @@ Commonly used tests for convergence:
 \begin{itemize}
 \item $\int_0^4 \frac{x}{\sqrt{x^2+9}}dx$;
 % answer: $2$
-\item $\int_0^1 \frac{2x}{1+x^4} dx$.
+%\item $\int_0^1 \frac{2x}{1+x^4} dx$.
 % answer: $\pi/4$
-\end{itemize}
-~\\
-2. Evaluate the following definite integrals:
-\begin{itemize}
+%\end{itemize}
+%~\\
+%2. Evaluate the following definite integrals:
+%begin{itemize}
 \item $\int_0^1 x\ln xdx$;
 % answer: $-1/4$
-\item $\int_0^{\pi} e^x\sin xdx$.
-% answer: $(e^{\pi}+1)/2$
+%\item $\int_0^{\pi} e^x\sin xdx$.
+%% answer: $(e^{\pi}+1)/2$
 \end{itemize}
 ~\\
-3. If $f$ is continuous on $\mathbb{R}$, show that
+2. If $f$ is continuous on $\mathbb{R}$, show that
 $$
 \int_{a}^{b} f(x+c) dx = \int_{a+c}^{b+c} f(x) dx.
 $$
 
 \column{.47\textwidth} % Right column and width
-4. Do the following series converge? Calculate the value of the infinite sum for each convergent series.\\
+3. Do the following series converge? Calculate the value of the infinite sum for each convergent series.\\
 (a) $\sum_{n=2}^{\infty} 5^{n-1}\left(\frac{9}{10}\right)^{n}$;\\
 (b) $\sum_{n=1}^{\infty} \left(\frac{3}{2}\right)^{n}\frac{1}{9^{n+2}}$.
 \\~\\
-5. True or false?
+4. True or false?
 \begin{itemize}
 \item If $x_n \rightarrow 0$ as $n \rightarrow \infty$, then $\sum_{n=1}^{\infty} x_n$ is convergent;
 \item $\sum_{n=1}^{\infty} x^n e^{-nx}$ is convergent for any $x > 0$;
@@ -708,6 +713,23 @@ $$
 
 % \end{frame}
 
+\begin{frame}
+\frametitle{Multivariate Calculus Review Exercises}
+\begin{enumerate}
+\item Let $f(x,y,z)=ye^x \ln z + z \tan z$ ($z \in (0,\frac{\pi}{2})$) and $g(x,y,z)=x^3y+y^3z+z^5+\sqrt{xy}z$.\\ Compute $\frac{\partial f}{\partial y}$, $\frac{\partial f}{\partial z}$, $\frac{\partial g}{\partial x}$, and $\frac{\partial g}{\partial y}$.
+%\\~\\ answer: $e^x \ln z$, $\frac{ye^x}{z}+\tan z + \frac{z}{\cos^2 z}$, $3x^2y + \frac{\sqrt{y}z}{2\sqrt{x}}$, and $x^3 + 3y^2 z + \frac{\sqrt{x}z}{2\sqrt{y}}$.
+\vspace*{0.5in}
+\item $f(x,y) = \frac{1}{\sqrt{2\pi y^2}}e^{-\frac{(x-s)^2}{2y^2}}$, where $s \in \mathbb{R}$ is a constant. Obtain the gradient vector and Hessian matrix of $f$.
+\vspace*{0.5in}
+\item Evaluate the double integral $\int_1^3 \int_0^2 (xy + x^2y^3)dydx$.
+\end{enumerate}
+
+
+
+%\\~\\ answer: $42\frac{2}{3}$
+
+\end{frame}
+
 %------------------------------------------------
 \begin{frame}
 \frametitle{Challenge Exercises: Afternoon Session}
@@ -716,18 +738,24 @@ $$
 \column{.47\textwidth} % Left column and width
 1. Given that $\int_1^{\infty} \frac{1}{x} dx = \infty$ and $\sum_{n=1}^{\infty} \frac{1}{n} = \infty$, use two methods to show that $\sum_{n=1}^{\infty} \frac{1}{n^p} = \infty$ for any $p \in (0,1)$.
 \\~\\
-2. Find $\lim_{x\rightarrow 3} \frac{x}{x-3} \int_{3}^{x} \frac{\sin t}{t} dt$.
-\\~\\
+%2. Find $\lim_{x\rightarrow 3} \frac{x}{x-3} \int_{3}^{x} \frac{\sin t}{t} dt$.
+2. Evaluate the following definite integrals:
+\begin{itemize}
+\item $\int_0^1 \frac{2x}{1+x^4} dx$.
+% answer: $\pi/4$
+\item $\int_0^{\pi} e^x\sin xdx$.
+% answer: $(e^{\pi}+1)/2$
+\end{itemize}
+%~\\
+\column{.47\textwidth} % Right column and width
 3. The Gamma function $\Gamma (x)$ is defined for any real number $x > 0$ as $\Gamma (x) = \int_{0}^{\infty} t^{x-1}e^{-t}dt$. Show that $\Gamma (x+1) = x\Gamma (x)$.
 % Use integration by parts.
-
-\column{.47\textwidth} % Right column and width
+\\~\\
 4. Evaluate $\int_{0}^{\infty} e^{x^2} dx$.\\
 (Hint: start with $\int_{0}^{\infty}\int_{0}^{\infty} e^{x^2+y^2} dxdy$.)
-\\~\\
-5. $f(x,y) = \frac{1}{\sqrt{2\pi y^2}}e^{-\frac{(x-s)^2}{2y^2}}$, where $s \in \mathbb{R}$ is a constant. Obtain the Hessian matrix of $f$.
-
+%\\~\\
 \end{columns}
+
 \end{frame}
 
 

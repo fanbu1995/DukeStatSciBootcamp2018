@@ -201,19 +201,20 @@ $$
 % Answer: $T_1(X) = \bar{X}$ and $T_2(X) = S^2 = \sum_{i=1}^n(X_i - \bar{X})^2/(n-1)$
 \end{frame}
 
-\begin{frame}
-\frametitle{Completeness}
-\begin{itemize}
-\item \textbf{Ancillary Statistic}: A statistic $S(X)$ whose distribution does not depend on the parameter $\theta$ is called an \textbf{ancillary statistic}.
-\item \textbf{Complete Statistic}: Let $f(t|\theta)$ be a family of pdfs or pmfs for a statistic $T(X)$. The family of distributions is called \textbf{complete} (equivalently, $T(X)$ is called a complete statistic) if for any function $g$,
-$$
-E_{\theta} g(T) = 0 \text{ for all } \theta \quad\Rightarrow\quad P_{\theta}(g(T)=0)=1 \text{ for all } \theta.
-$$
-\end{itemize}
-\end{frame}
+% \begin{frame}
+% \frametitle{Completeness}
+% \begin{itemize}
+% \item \textbf{Ancillary Statistic}: A statistic $S(X)$ whose distribution does not depend on the parameter $\theta$ is called an \textbf{ancillary statistic}.
+% \item \textbf{Complete Statistic}: Let $f(t|\theta)$ be a family of pdfs or pmfs for a statistic $T(X)$. The family of distributions is called \textbf{complete} (equivalently, $T(X)$ is called a complete statistic) if for any function $g$,
+% $$
+% E_{\theta} g(T) = 0 \text{ for all } \theta \quad\Rightarrow\quad P_{\theta}(g(T)=0)=1 \text{ for all } \theta.
+% $$
+% \end{itemize}
+% \end{frame}
 
 \begin{frame}
-\frametitle{Complete and Sufficient Statistics for the Exponential Family}
+%\frametitle{Complete and Sufficient Statistics for the Exponential Family}
+\frametitle{Sufficient Statistics for the Exponential Family}
 Let $X_1,X_2,\ldots,X_n$ be i.i.d observations from an exponential family with pdf or pmf of the form
 $$
 f(x|\theta) = h(x)c(\theta)\exp\left(\sum_{j=1}^k w(\theta_j)t_j(x)\right),
@@ -222,15 +223,19 @@ where $\theta = (\theta_1,\theta_2,\ldots,\theta_k)$. Then the statistic
 $$
 T(X) = \left(\sum_{i=1}^n t_1(X_i),\sum_{i=1}^n t_2(X_i),\ldots,\sum_{i=1}^n t_k(X_i)\right)
 $$
-is a complete and sufficient statistic (c.s.s.) as long as the parameter space $\Theta$ contains an open set in $\mathbb{R}^k$.
+%is a complete and sufficient statistic (c.s.s.) as long as the parameter space $\Theta$ contains an open set in $\mathbb{R}^k$.
+is a sufficient statistic.
 \end{frame}
 
 \begin{frame}
-\frametitle{Completeness and Sufficiency: Exercises}
+%\frametitle{Completeness and Sufficiency: Exercises}
+\frametitle{Sufficiency: Exercises}
 \begin{enumerate}
-\item Suppose that $X_1,X_2,\ldots,X_n$ are i.i.d observations from a Poisson distribution with parameter $\lambda$. Find a c.s.s. for $\lambda$.
+\item Suppose that $X_1,X_2,\ldots,X_n$ are i.i.d observations from a Poisson distribution with parameter $\lambda$. %Find a c.s.s. for $\lambda$.
+Find a sufficient statistic for $\lambda$.
 \vspace*{0.7in}
-\item Suppose that $X_1,X_2,\ldots,X_n$ are i.i.d observations from a Gamma distribution with parameters $\theta = (\alpha,\beta)$ (use the shape-rate parametrization). Find a c.s.s. for $\theta$.
+\item Suppose that $X_1,X_2,\ldots,X_n$ are i.i.d observations from a Gamma distribution with parameters $\theta = (\alpha,\beta)$ (use the shape-rate parametrization). %Find a c.s.s. for $\theta$.
+Find a sufficient statistic for $\theta$.
 \end{enumerate}
 \end{frame}
 
@@ -325,13 +330,13 @@ If we adopt the MLE estimator $\hat{\sigma}^2$ for $\sigma^2$ instead, where $\h
 \vspace*{0.6in}
 \end{frame}
 
-\begin{frame}
-\frametitle{Uniform Minimum Variance Unbiased Estimators}
-\begin{itemize}
-\item If an estimator $W^*$ of $\tau(\theta)$ satisfies $E_{\theta}W^* = \tau(\theta)$ for all $\theta$ and, for any other estimator $W$ with $E_{\theta}W = \tau(\theta)$, we have $\text{Var}_{\theta}W* \leq \text{Var}_{\theta}W$ for all $\theta$, then \textbf{$W^*$} is called a \textbf{uniform minimum variance unbiased estimator (UMVUE) of $\tau(\theta)$}.
-\item Let $T$ be a complete and sufficient statistic for a parameter $\theta$, and let $\phi(T)$ be an estimator based only on $T$ and unbiased for $\tau(\theta)$. Then $\phi(T)$ is the UMVUE of $\tau(\theta)$.
-\end{itemize}
-\end{frame}
+% \begin{frame}
+% \frametitle{Uniform Minimum Variance Unbiased Estimators}
+% \begin{itemize}
+% \item If an estimator $W^*$ of $\tau(\theta)$ satisfies $E_{\theta}W^* = \tau(\theta)$ for all $\theta$ and, for any other estimator $W$ with $E_{\theta}W = \tau(\theta)$, we have $\text{Var}_{\theta}W* \leq \text{Var}_{\theta}W$ for all $\theta$, then \textbf{$W^*$} is called a \textbf{uniform minimum variance unbiased estimator (UMVUE) of $\tau(\theta)$}.
+% \item Let $T$ be a complete and sufficient statistic for a parameter $\theta$, and let $\phi(T)$ be an estimator based only on $T$ and unbiased for $\tau(\theta)$. Then $\phi(T)$ is the UMVUE of $\tau(\theta)$.
+% \end{itemize}
+% \end{frame}
 
 \begin{frame}
 \frametitle{Review Exercises: Morning Session}
@@ -489,23 +494,23 @@ Suppose that $X$ is a random sample from a distribution with parameter $\theta$,
 \end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Find Interval Estimators Through Pivot Quantities}
-\begin{itemize}
-\item A random variable $Q(\mathbf{X},\mathbf{\theta})$ is a \textbf{pivot quantity} if the distribution of $Q(\mathbf{X},\mathbf{\theta})$ is independent of all parameters.
-\item Usually, $Q(\mathbf{X},\mathbf{\theta})$ contains both parameters and statistics, but for any set $\mathcal{A}$, $P_{\theta}(Q(\mathbf{X},\mathbf{\theta})\in \mathcal{A})$ does not depend on $\theta$.
-\item The goal is to find a pivot quantity $Q(\mathbf{x},\mathbf{\theta})$ and a set $\mathcal{A}$ such that the set $\{\mathbf{\theta}:Q(\mathbf{x},\mathbf{\theta})\in \mathcal{A}\}$ is a set estimate of $\mathbf{\theta}$.
-\end{itemize}
-\end{frame}
+% \begin{frame}
+% \frametitle{Find Interval Estimators Through Pivot Quantities}
+% \begin{itemize}
+% \item A random variable $Q(\mathbf{X},\mathbf{\theta})$ is a \textbf{pivot quantity} if the distribution of $Q(\mathbf{X},\mathbf{\theta})$ is independent of all parameters.
+% \item Usually, $Q(\mathbf{X},\mathbf{\theta})$ contains both parameters and statistics, but for any set $\mathcal{A}$, $P_{\theta}(Q(\mathbf{X},\mathbf{\theta})\in \mathcal{A})$ does not depend on $\theta$.
+% \item The goal is to find a pivot quantity $Q(\mathbf{x},\mathbf{\theta})$ and a set $\mathcal{A}$ such that the set $\{\mathbf{\theta}:Q(\mathbf{x},\mathbf{\theta})\in \mathcal{A}\}$ is a set estimate of $\mathbf{\theta}$.
+% \end{itemize}
+% \end{frame}
 
 \begin{frame}
-\frametitle{Example: Normal Pivotal Interval}
+\frametitle{Example: Normal Confidence Interval}
 If $X_1,\ldots,X_n$ are i.i.d. $N(\mu,\sigma^2)$ with $\sigma^2$ known, then $Z=(\bar{X}-\mu)/(\sigma/\sqrt{n})$ is a pivot quantity ($Z \sim N(0,1)$). Then a confidence interval of $\theta$ can be
 $$
 \{\mu: \bar{x}-a\frac{\sigma}{\sqrt{n}} \leq \mu \leq \bar{x}+a\frac{\sigma}{\sqrt{n}}\},
 $$
 where $a$ is a constant. \\
-If $\sigma^2$ is unknown, then $T_{n-1}=(\bar{X}-\mu)/(S/\sqrt{n})$ is a pivot quantity ($T_{n-1} \sim t_{n-1}$). Thus, for any given $\alpha \in (0,1)$, a $1-\alpha$ confidence interval of $\mu$ is given by
+If $\sigma^2$ is unknown, then $T_{n-1}=(\bar{X}-\mu)/(S/\sqrt{n}) \sim t_{n-1}$ which is independent of $\mu$. Thus, for any given $\alpha \in (0,1)$, a $1-\alpha$ confidence interval of $\mu$ is given by
 $$
 \{\mu: \bar{x}-t_{n-1,(1-\alpha)/2}\frac{s}{\sqrt{n}} \leq \mu \leq \bar{x}+t_{n-1,(1-\alpha)/2}\frac{s}{\sqrt{n}}\},
 $$
@@ -514,20 +519,20 @@ where $t_{df,p}$ is the $p\times 100\%$th quantile of a student-$t$ distribution
 
 
 
-\begin{frame}
-\frametitle{Hypothesis Testing \& Confidence Sets}
-\begin{theorem}
-For each $\theta_0 \in \Theta_0$, let $A(\theta_0)$ be the acceptance region of a level $\alpha$ test of $H_0: \theta=\theta_0$. For each $\mathbf{x}\in \mathcal{X}$, define a set $C(\mathbf{x})$ in the parameter space by
-$$
-C(\mathbf{x})=\{\theta_0:\mathbf{x}\in A(\theta_0)\}.
-$$
-Then the random set $C(\mathbf{x})$ is a $1-\alpha$ confidence set. Conversely, let $C(\mathbf{x})$ be a $C$ confidence set, then for any $\theta_0\in \Theta$,
-$$
-A(\theta_0) = \{\mathbf{x}:\theta_0 \in C(\mathbf{x})\}
-$$
-is the acceptance region of a level $1-C$ test of $H_0: \theta=\theta_0$.
-\end{theorem}
-\end{frame}
+% \begin{frame}
+% \frametitle{Hypothesis Testing \& Confidence Sets}
+% \begin{theorem}
+% For each $\theta_0 \in \Theta_0$, let $A(\theta_0)$ be the acceptance region of a level $\alpha$ test of $H_0: \theta=\theta_0$. For each $\mathbf{x}\in \mathcal{X}$, define a set $C(\mathbf{x})$ in the parameter space by
+% $$
+% C(\mathbf{x})=\{\theta_0:\mathbf{x}\in A(\theta_0)\}.
+% $$
+% Then the random set $C(\mathbf{x})$ is a $1-\alpha$ confidence set. Conversely, let $C(\mathbf{x})$ be a $C$ confidence set, then for any $\theta_0\in \Theta$,
+% $$
+% A(\theta_0) = \{\mathbf{x}:\theta_0 \in C(\mathbf{x})\}
+% $$
+% is the acceptance region of a level $1-C$ test of $H_0: \theta=\theta_0$.
+% \end{theorem}
+% \end{frame}
 
 \begin{frame}
 \frametitle{Review Exercises: Afternoon Session}
@@ -543,12 +548,89 @@ is the acceptance region of a level $1-C$ test of $H_0: \theta=\theta_0$.
 %\\~\\
 %OR
 %\\~\\
-\href{https://youtu.be/3OJEae7Qb_o}{\textbf{Introduction to Bayesian Data Analysis}, by \textit{asmusab}}
+\href{https://youtu.be/3OJEae7Qb_o?t=3m7s}{\textbf{Introduction to Bayesian Data Analysis}, by \textit{asmusab}}
+\\~\\
+Exercise:\\
+Python: \url{https://goo.gl//ceShN5}\\
+R: \url{https://goo.gl//cxfnYK}
 \end{frame}
 
 \begin{frame}
-\frametitle{Challenge Exercises: Afternoon Session}
+\frametitle{Bayesian Analysis: the Basics}
+\textbf{Two quantities of interest:}
+\begin{enumerate}
+\item $y \in \mathcal{Y}$: the data ($\mathcal{Y}$: the sample space), a subset of members of the population of interest;
+\item $\theta \in \Theta$: the parameter ($\Theta$: the parameter space), expressing the population characteristics.
+\end{enumerate}
+~\\
+\textbf{Three distributions:}
+\begin{enumerate}
+\item For each numerical value $\theta \in \Theta$, the \textbf{prior distribution} $p(\theta)$ describes our belief that $\theta$ represents the true population characteristics;
+\item For each $\theta \in \Theta$ and $y \in \mathcal{Y}$, the \textbf{sampling model} $p(y|\theta)$ describes our belief that $y$ would be the outcome of the study if we knew $\theta$ to be true;
+\item For each numerical value of $\theta \in \Theta$, the \textbf{posterior distribution} $p(\theta|y)$ describes out belief that $\theta$ is the true value, having observed dataset $y$.
+\end{enumerate}
+\end{frame}
 
+\begin{frame}
+\frametitle{Posterior Distribution}
+The posterior distribution is obtained from the prior distribution and sampling model via \textbf{Bayes' rule}:
+$$
+p(\theta|y) = \frac{p(y|\theta)p(\theta)}{p(y)} = \frac{p(y|\theta)p(\theta)}{\int_{\Theta}p(y|\tilde{\theta})p(\tilde{\theta})d\tilde{\theta}}.
+$$
+The Bayes' rule tells us how our beliefs should change after seeing new information.
+
+In practice, however, since evaluating $\int_{\Theta}p(y|\tilde{\theta})p(\tilde{\theta})d\tilde{\theta}$ is often intractable, the posterior is instead obtained by
+$$
+p(\theta|y) \propto p(y|\theta)p(\theta),
+$$
+and the form of the right hand side can help us determine $p(\theta|y)$.
+\end{frame}
+
+\begin{frame}
+\frametitle{A Binomial Example}
+A survey is carried out to study the support rate $\theta$ ($0 < \theta < 1$) of a policy. 100 people are surveyed, and a binary response $Y_i$ is obtained from each person $i$ ($i=1,2,\ldots,100$), $Y_i \sim \text{Bernoulli}(\theta)$ (that is, $Y = \sum_{i=1}^{100}Y_i \sim \text{Binomial}(100,\theta)$). 
+\\~\\
+Before the survey, we believe that $\theta \sim \text{Beta}(5,5)$, while the result of the survey is $Y=60$. We'd like to obtain the posterior distribution of $\theta$ given the survey outcome.
+\end{frame}
+
+\begin{frame}
+\frametitle{A Binomial Example (Cont'd)}
+The prior distribution is $\theta \sim \text{Beta}(5,5)$, that is
+$$
+p(\theta) = \frac{\theta^{5-1}(1-\theta)^{5-1}}{B(5,5)}
+\propto \theta^{5-1}(1-\theta)^{5-1}.
+$$
+The sampling distribution is $Y \sim \text{Binomial}(100,\theta)$, that is, for each $\theta \in (0,1)$ and $y=0,1,\ldots,100$,
+$$
+P(Y=y|\theta) = 
+\begin{pmatrix}
+100\\
+y
+\end{pmatrix}
+\theta^{y}(1-\theta)^{100-y}.
+$$
+Using Bayes' rule, the posterior distribution of $\theta$ given that $Y=60$ is
+$$
+\begin{aligned}
+p(\theta|Y=60) &\propto p(Y=60|\theta)p(\theta)\\
+& = \theta^{60}(1-\theta)^{100-60} \theta^{5-1}(1-\theta)^{5-1}\\
+&= \theta^{65-1}(1-\theta)^{45-1},
+\end{aligned}
+$$
+which has the form of the p.d.f. of a $\text{Beta}(65,45)$ distribution.\\
+Thus, we have $\theta|Y=60 \sim \text{Beta}(65,45)$.
+\end{frame}
+
+\begin{frame}
+\frametitle{Review Exercise: Bayesian Analysis}
+Two tennis players, Serena and Venus, have played against each other 13 times in the past decade, with Serena winning 9 times. Assume that the outcome of a match between them is a binary variable $Y$ ($Y=1$ when Serena wins, $Y=0$ when Venus does) that follows $\text{Bernoulli}(\theta)$ where $0 < \theta < 1$ is an unknown parameter, and we are interested in \textbf{estimating $\theta$, Serena's winning rate against Venus}. We further assume that the outcomes of tennis matches, $Y_1,\ldots,Y_{13}$, are independent.
+\begin{enumerate}
+\item What is the maximum likelihood estimate of $\theta$?
+\item Suppose we ask a tennis expert, John, for prior information. John believes that Serena's winning rate is either $50\%$ or $75\%$, and that these values are equally likely. Given the data, which value of $\theta$ do you think is more likely?
+\item Another expert, Martina, suggests that we adopt a $\text{Beta}(9,8)$ prior for $\theta$ %given that the Head-to-Head between Serena and Venus was 9-8 in those matches more than 10 years ago.
+upon analyzing match outcomes more than 10 years ago.
+What is the posterior distribution of $\theta$ given the match outcomes in the past decade? What is the posterior mean of $\theta$?
+\end{enumerate}
 \end{frame}
 
 \begin{frame}
