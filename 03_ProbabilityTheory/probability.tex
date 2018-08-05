@@ -153,13 +153,13 @@ In order to use Bayes Rule, we first need $\mathbb{P}(dot \>\>\> received)$.
 \begin{align*}
 \mathbb{P}(dot \>\>\> received) &= \mathbb{P}(dot \>\>\> received \cap dot \>\>\> sent) + \\ 
 &\mathbb{P}(dot \>\>\> received \cap \>\>\> dash \>\>\> sent) &= \frac{7}{8}\frac{3}{7} \\
-&+ \frac{1}{8}\frac{4}{7} = \frac{25}{26}
+&+ \left(\frac{1}{8}\right)\left(\frac{4}{7}\right) = \frac{25}{26}
 \end{align*}
 
 Applying Bayes Rule:
 \begin{align*}
 \mathbb{P}(dot\>\>\> sent| dot \>\>\> received)  &= \frac{\mathbb{P}(dot \>\>\> sent \cap dot \>\>\> received)}{\mathbb{P}(dot \>\>\> sent)} \\
-&= \frac{\frac{7}{8}\frac{3}{7}}{\frac{25}{26}}
+&= \frac{\left(\frac{7}{8}\right)\left(\frac{3}{7}\right)}{\frac{25}{26}}
 \end{align*}
 \end{frame}
 
@@ -191,7 +191,7 @@ A &= \{\mathrm{doubles \>\>\> appear}\} \\
 B &= \{\mathrm{the \>\>\> sum \>\>\> is \>\>\> between \>\>\> 7 \>\>\> and \>\>\> 10}\} \\
 C &= \{\mathrm{the \>\>\> sum \>\>\> is \>\>\> 2 \>\>\> or \>\>\> 7 \>\>\> or \>\>\> 10}\} \\
 \end{align*}
-Are the evens $A, B, C$ mutually independent?
+Are the events $A, B, C$ mutually independent?
 \end{frame}
 
 \begin{frame}{Independence - Example Cont.}
@@ -241,7 +241,7 @@ Hence, the events are \textbf{not} mutually independent
 \begin{center}
 A \emph{random variable} is a function from the sample space to the real numbers 
 \end{center}
-\textbf{Note}: For those of you taking STA-711 you will learn a more formal definition
+\textbf{Note}: For those of you taking STA 711 you will learn a more formal definition
 \end{frame}
 
 \begin{frame}{Random Variables - Example}
@@ -281,7 +281,7 @@ A function is a CDF if and only if the following are true:
 \begin{itemize}
 \item{$\lim_{x \rightarrow -\infty}F(x) = 0$ and $lim_{x \rightarrow \infty}F(x) = 1$}
 \item{$F(x)$ is a non-decreasing function of $x$}
-\item{$F(x)$ is right continuous i.e. for every number $x_{0}, \lim_{x\rightarrow x_{0}} F(x) = F(x_{0})$} 
+\item{$F(x)$ is right continuous i.e. for every number $x_{0}, \lim_{x\rightarrow x_{0}^{+}} F(x) = F(x_{0})$} 
 \end{itemize}
 An important implication of CDFs: \textit{A random variable $X$ is continuous if $F_{X}(x)$ is a continuous function of $x$. A random variable is discrete if $F_{X}(x)$ is a step function of $x$. }
 \end{frame}
@@ -294,7 +294,7 @@ P(X \leq x) = \sum_{i = 1}^{x} (1-p)^{i-1}p
 \end{frame}
  
 \begin{frame}{Density and Mass Functions of Random Variables}
-Related to any random variable $X$ and its CDF are the concept of probability\emph{density} and probability \emph{mass} functions. Specifically, a \emph{probability mass function} (PMF) for a discrete random variable is defined as:
+Related to any random variable $X$ and its CDF are the concept of probability \emph{density} and probability \emph{mass} functions. Specifically, a \emph{probability mass function} (PMF) for a discrete random variable is defined as:
 \begin{align*}
 f_{X}(x) = P(X = x); \forall x
 \end{align*}
@@ -393,7 +393,7 @@ If we say that $X\sim\mathrm{Exponential}(\lambda)$, with PDF $f_{X}(x) = \lambd
 First, notice that if we say that $X\sim\mathrm{Gamma}(\alpha, \beta)$ and PDF $g_{X}(x) = \frac{\beta^{\alpha}}{\Gamma(\alpha)} x^{\alpha - 1} e^{-\beta x}$
 \newline
 
-In instances when $\alpha = 1$ then this an Exponential random variable with $\lambda = \beta$\footnote{Note that is using the rate parameterization. Sometimes when we use the scale parameterization the reciprocal of the $\lambda$ parameter is used}. 
+In instances when $\alpha = 1$ then this an Exponential random variable with $\lambda = \beta$. 
 \newline 
 
 The integrand from the previous slide, is \emph{almost} like a Gamma PDF with $\alpha = 2$. Hence, you can complete it by some clever multiplication and division:
@@ -430,7 +430,7 @@ Variances also have nice properties. Consider two random variables $X$ and $Y$.
 \begin{align*}
 \mathbb{V}[X \mp Y] = \mathbb{V}[X] + \mathbb{V}[Y] \mp 2\mathbb{C}(X,Y)
 \end{align*}
-These extend to multivariate random variables as well. We will see these in the second session today
+These extend to multivariate random variables as well.
 \end{frame}
 
 \subsection{A Gentle Introduction to Distribution Theory}
@@ -439,10 +439,11 @@ These extend to multivariate random variables as well. We will see these in the 
 A random variable $X$ is \emph{discrete} if the range of $X$, the sample space, is countable. In most situations, the random variable has integer valued outcomes
 \newline
 
-Some example of discrete distributions:
+Some examples of discrete distributions:
 \begin{itemize}
 \item{Binomial Distribution}
 \item{Poisson Distribution}
+\item{Negative Binomial Distribution}
 \end{itemize}
 \end{frame}
 
@@ -482,6 +483,18 @@ Now recognize the following result from the Taylor series expansion on $\exp\{y\
 \end{align*}
 \end{frame}
 
+\begin{frame}{Negative Binomial Distribution}
+This distribution counts the the number successful trials $k$ that occur before the $r$th failed trial, where each trial has fixed probability $p$ of success
+\begin{align*}
+X &\sim \mathrm{NB}(p, r) \\
+P(X  = n) &= \frac{(k+r - 1)!}{k!(r-1)!} p^{k}(1-p)^{r} \\
+\mathbb{E}[X] &= \frac{pr}{1-p} \\
+\mathbb{V}[X] &= \frac{p r}{(1-p)^2}
+\end{align*}
+
+Is highly related to the Poisson and Gamma Distributions
+\end{frame}
+
 
 
 \begin{frame}{Continuous Distributions}
@@ -490,14 +503,38 @@ A random variable $X$ is \emph{continuous} if the range of $X$, the sample space
 
 Some examples of Continuous Distributions
 \begin{itemize}
+\item{Normal Distribution}
+\item{Chi-Squared Distribution}
+\item{Exponential Distribution}
 \item{Gamma Distribution}
 \item{Inverse-Gamma Distribution}
-\item{Normal Distribution}
+\item{Student-t Distribution}
+\item{F Distribution}
+\item{Beta Distribution}
 \end{itemize}
 \end{frame}
 
+\begin{frame}{Normal Distribution}
+A random variable $X\sim\mathrm{Normal}(\mu, \sigma^{2})$ with PDF:
+\begin{align*}
+f_{X}(x) = \frac{1}{\sqrt{2\pi\sigma^{2}}}\exp\{-\frac{(x-\mu)^{2}}{2\sigma^{2}}\}
+\end{align*}
+We also sometimes express this in terms of a \emph{precision} parameter, rather than a variance, $X\sim\mathrm{Normal}(\mu, \phi^{-1})$ which becomes useful when performing Bayesian inference.  If $Z \sim \mathrm{Normal}(0, 1)$ then the distribution of $Z$ is standard normal.\\
+\end{frame}
+
+\begin{frame}
+\frametitle{Chi-Squared Distribution}
+If $Z_1$, $Z_2, \hdots, Z_k$ are independent, standard normal random variables, then 
+
+$$\sum_{j = 1}^k Z_j^2 \sim \chi^2_k$$
+
+follows a Chi-Squared distribution with $k$ degrees of freedom.  This is a special case of the Gamma distribution, discussed on the next slide.  
+
+
+\end{frame}
+
 \begin{frame}{Gamma Distribution}
-A random variable variable $X\sim\mathrm{Gamma}(\alpha, \beta)$ with PDF:
+A random variable $X\sim\mathrm{Gamma}(\alpha, \beta)$ with PDF:
 \begin{align*}
 f_{X}(x) &= \frac{\beta^{\alpha}}{\Gamma(\alpha)}x^{\alpha-1}\exp\{-x\beta\} \\
 \mathbb{E}[X] &= \frac{\alpha}{\beta} \\
@@ -505,18 +542,6 @@ f_{X}(x) &= \frac{\beta^{\alpha}}{\Gamma(\alpha)}x^{\alpha-1}\exp\{-x\beta\} \\
 &\alpha, \beta > 0 \\
 &x \in (0, \infty)
 \end{align*} 
-\end{frame}
-
-\begin{frame}{Gamma Distribution - Alternative Parameterization}
-We often say that $X\sim\mathrm{Gamma}(k, \theta)$ with PDF:
-\begin{align*}
-f_{X}(x) &= \frac{\theta^{-k}}{\Gamma(k)}x^{k-1}\exp\{-\frac{x}{\theta}\} \\
-\mathbb{E}[X] &= k\theta \\
-\mathbb{V}[X] &= k\theta^{2} \\
-&k, \theta > 0 \\
-&x \in (0, \infty)
-\end{align*} 
-Note that in this framework $\alpha = k$ and $\theta = \frac{1}{\beta}$
 \end{frame}
 
 \begin{frame}{Gamma Distribution  - Important Properties}
@@ -529,12 +554,39 @@ Here are some important tricks that will be useful in \textbf{711} and \textbf{6
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Normal Distribution}
-A random variable $X\sim\mathrm{Normal}(\mu, \sigma^{2})$ with PDF:
+\begin{frame}{Student's-$t$ Distribution}
+A random variable $T$ follows a Student's-$t$ distribution if
 \begin{align*}
-f_{X}(x) = \frac{1}{\sqrt{2\pi\sigma^{2}}}\exp\{-\frac{(x-\mu)^{2}}{2\sigma^{2}}\}
-\end{align*}
-We also sometimes express this in terms of a \emph{precision} parameter, rather than a variance, $X\sim\mathrm{Normal}(\mu, \phi^{-1})$ which will become useful $\ldots$ everywhere since we are from the cult of Bayes 
+T & = \frac{Z}{\sqrt{V/\nu}},\\
+Z &\sim N(0, 1),\\
+V &\sim \chi^2_{\nu}
+\end{align*} 
+
+and $Z$ and $V$ are independent.
+\end{frame}
+
+\begin{frame}{$F$ Distribution}
+A random variable $X$ follows a $F$-distribution with numerator degrees of freedom $\nu_1$ and denominator degrees of freedom $\nu_2$ if
+\begin{align*}
+X &= \frac{V_1 / \nu_1}{V_2 / \nu_2}
+\end{align*} 
+
+where $V_1$ and $V_2$ are independent chi-squared random variables with degrees of freedom equal to $\nu_1$ and $\nu_2$ respectively.
+\end{frame}
+
+\begin{frame}{Beta Distribution}
+A random variable $X\sim\mathrm{Beta}(\alpha, \beta)$ with PDF:
+\begin{align*}
+f_{X}(x) &= \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)}x^{\alpha-1}(1-x)^{\beta - 1} \\
+\mathbb{E}[X] &= \frac{\alpha}{\alpha + \beta} \\
+\mathbb{V}[X] &= \frac{\alpha \beta}{(\alpha + \beta)^{2}(\alpha + \beta + 1)} \\
+&\alpha, \beta > 0 \\
+&x \in (0, 1)
+\end{align*} 
+
+Very useful for eliciting probability distributions for proportions.\\~\\
+
+\href{https://en.wikipedia.org/wiki/Relationships_among_probability_distributions}{Cool distributional relationships}
 \end{frame}
 
 \begin{frame}{Exponential Families}
@@ -545,7 +597,7 @@ f_{X}(x|\theta) &= h(x) c(\theta)\exp\{\sum_{i = 1}^{k}\omega_{i}(\theta)t_{i}(x
 Where:
 \begin{align*}
 h(x) &\geq 0 \\
-c(\theta) &= 0 \\
+c(\theta) &\geq 0 \\
 \omega_{1}(x),&\ldots,\omega_{k}(x) \in \mathbb{R}\\
 t_{1}(x),&\ldots t_{k}(x) \in \mathbb{R}\\
 \end{align*}
@@ -762,116 +814,284 @@ And then the marginal variance:
 \end{align*}
 \end{frame}
 
-\section{A Brief Overview of Bayesian Ideas}
-\begin{frame}{Bayes Rule}
-You have already seen Bayes' Rule for events:
+\section{Random Matrices and Multivariate Statistics}
+\begin{frame}
+\frametitle{Random Vectors}
+If we have $d$ random variables $X_1, X_2, \hdots, X_d$, each defined on the real line, we can write them as the $d$ dimensional column vector $$\mathbf{X} = (X_1, \cdots X_d)^T$$
+
+which we call a $d$-dimensional \textbf{random vector}.  The joint distribution function of the random vector $\mathbf{X}$ is
+
 \begin{align*}
-P(X|Y) = \frac{P(X\cap Y)}{P(Y)}
+F_X(\mathbf{x}) &= F_X(x_1, \hdots, x_d) \\
+&= P(X_1 \leq x_1, \hdots, X_d \leq x_d)\\
+&= P(\mathbf{X} \leq \mathbf{x})
 \end{align*}
-and also in the context of distributions:
-\begin{align*}
-f_{X|Y}(x|y) = \frac{f_{X, Y}(x,y)}{f_{Y}(y)}
-\end{align*}
-But what if $Y$ was some \textbf{data} you had observed, and $X$ was instead a parameter that controlled the distribution of $Y$, and was itself a random variable that you wanted to learn something about?
+
+If $F_X$ is absolutely continuous, then the joint density function $f_X$ of $\mathbf{X}$ is
+
+$$f_X(\mathbf{x}) = f_X(x_1, \hdots, x_d) = \frac{\partial ^d F_X(x_1, \hdots, x_d)}{\partial x_1 \cdots \partial x_d}$$
 \end{frame}
 
-\begin{frame}{The Bayesian Framework}
-We'll now use a slightly altered version of Bayes' rule. Assume that we observe the data $Y$ and it is theorized to follow some distribution which has a parameter $\theta$ that you want to conduct some inference on. 
-\begin{align*}
-f(\theta|Y) \propto f(\theta)f(Y|\theta)
-\end{align*}
-Where:
-\begin{itemize}
-\item{$f(\theta|Y)$: The posterior}
-\item{$f(\theta)$: The prior}
-\item{$f(Y|\theta)$: The likelihood}
-\end{itemize}
-The \emph{posterior} distribution allows you to conduct inference on the parameter $\theta$ in light of the data that you observe via the \emph{likelihood}, regularized by beliefs quantified in the \emph{prior}. The easiest method of inference is via \emph{conjugacy}. 
+\begin{frame}
+\frametitle{Random Vectors}
+To find the marginal density of a subset of the $d$ variables, you can just integrate the others out.  For example, if we have a joint bivariate density $f_{X_1,X_2}(x_1, x_2)$, then 
+
+$$f_{X_1}(x_1) = \int_{-\infty}^{\infty} f_{X_1,X_2}(x_1, x_2) dx_2 \qquad f_{X_2}(x_2) = \int_{-\infty}^{\infty} f_{X_1,X_2}(x_1, x_2) dx_1$$
+
+The components of a random vector $\mathbf{X}$ are \textbf{independent} if the joint distribution function is a product of the marginal distribution functions
+
+$$F_X(\mathbf{x}) = \prod_{i=1}^d F_i(x_i)$$
+
+In addition, the joint density is the product of marginals
+
+$$f_X(\mathbf{x}) = \prod_{i=1}^d f_i(x_i)$$
 \end{frame}
 
-\begin{frame}{The Bayesian Framework Cont.}
-Relationship between the posterior, likelihood and prior:
-\begin{center}
-\begin{figure}
-    \centering
-    \includegraphics[scale = 0.4]{posteriorplot.png}
-    \caption{The posterior can be thought of as a compromise between the data and expertise quantified in the prior}
-    \label{fig:my_label}
-\end{figure}
-\end{center}
+\begin{frame}
+\frametitle{Expectation and Covariance}
+If $\mathbf{X}$ is a random vector with values in $\mathbb{R}^d$, then its expected value is given by the $d$ dimensional vector
+
+$$\mathbf{\mu}_X = E(\mathbf{X}) = (E(X_1), \cdots, E(X_d)) = (\mu_1, \cdots, \mu_d)^T$$
+
+and the $d \times d$ \textbf{covariance matrix} of $\mathbf{X}$ is 
+
+\begin{align*}
+\mathbf{\Sigma}_{XX} &= \text{cov}(\mathbf{X}, \mathbf{X}) \\
+&= E[(\mathbf{X} - \mathbf{\mu}_X)(\mathbf{X} - \mathbf{\mu}_X)^T]\\
+&= E[(X_1 - \mu_1, \cdots, X_d - \mu_d) (X_1 - \mu_1, \cdots, X_d - \mu_d)^T]\\
+&= 
+\begin{pmatrix}
+    \sigma_1^2 & \sigma_{12} & \dots  & \sigma_{1d}\\
+    \sigma_{21} & \sigma_2^2  & \dots  & \sigma_{2d}\\
+    \vdots & \vdots  & \ddots & \vdots \\
+    \sigma_{d1} & \sigma_{d2}  & \dots  & \sigma_d^2
+\end{pmatrix}
+\end{align*} 
 \end{frame}
 
-\begin{frame}{Conjugacy of the Prior Distribution}
-\textbf{Definition}:
-A prior distribution is considered conjugate for a likelihood if the resulting posterior distribution is in the same family as the prior. 
-\newline
+\begin{frame}
+\frametitle{Correlation Matrix}
+The \textbf{correlation matrix} of $\mathbf{X}$ can be obtained by from $\mathbf{\Sigma}_{XX}$ by dividing the $i$th row by $\sigma_i$ and the $j$th column by $\sigma_j$.  The $d \times d$ matrix is then
 
+$$P_{XX} = \begin{pmatrix}
+    1 & \rho_{12} & \dots  & \rho_{1d}\\
+    \rho_{21} & 1  & \dots  & \rho_{2d}\\
+    \vdots & \vdots  & \ddots & \vdots \\
+    \rho_{d1} & \rho_{d2}  & \dots  & 1
+\end{pmatrix}$$
 
-The example that follows will attempt to make this idea more concrete. 
+where 
+
+$$\rho_{ij} = \rho_{ji} = \begin{cases}
+\frac{\sigma_{ij}}{\sigma_i \sigma_j} & i \neq j\\
+1 & \text{otherwise}
+\end{cases}
+$$
+
+is the pairwise correlation coefficient between $X_i$ and $X_j$.  The correlation coefficient will always lie between $-1$ and $1$ and is a measure of association between $X_i$ and $X_j$.
 \end{frame}
 
-\begin{frame}{Conjugacy of the Prior - Example}
-Assume that you observe $n$ observations theorized to follow a Poisson distribution $Y_{1},\ldots, Y_{n} \sim \mathrm{Poisson}(\lambda)$. We can further assume that $\lambda \sim \mathrm{Gamma}(a, b)$. Find the posterior distribution of the parameter $\lambda|Y_{1},\ldots, Y_{n}$. 
-\end{frame}
+\begin{frame}
+\frametitle{Linear Functions of Random Vectors}
+If $\mathbf{Y}$ is a linear function of $\mathbf{X}$ such that
 
-\begin{frame}{Conjugacy of the Prior - Example  Cont.}
-\small
-The Poisson likelihood is given as follows:
-\begin{align*}
-f(y_{1},\ldots, y_{n}|\lambda) &= \prod_{i=1}^{n}\exp\{ -\lambda \}\frac{1}{y_{i}!}\lambda^{y_{i}} \\
-&\propto \exp \{-n\lambda\}\lambda^{n \bar{y}}
-\end{align*}
-The Gamma prior is given as follows:
-\begin{align*}
-f(\lambda) &= \frac{b^{a}}{\Gamma{a}}\lambda^{a-1}\exp\{-\lambda b\} \\
-&\propto\lambda^{a-1}\exp\{-\lambda b\}
-\end{align*}
-Using Bayes' rule we can find the posterior as follows:
-\begin{align*}
-f(\lambda|y_{1},\ldots, y_{n}) &\propto   f(y_{1},\ldots, y_{n}|\lambda) f(\lambda) \\
-&\propto \exp\{-n\lambda\}\lambda^{n \bar{y}} \theta^{a-1}\exp{-\theta b}\\
-&\propto \exp\{-(b + n)\} \lambda^{n\bar{y}+a-1}
-\end{align*}
-This is exactly the kernel of the Gamma distribution:
-\begin{align*}
-\lambda|y_{1},\ldots, y_{n} \sim\mathrm{Gamma}(n\bar{y}+a, b+n)
-\end{align*}
-\end{frame}
+$$\mathbf{Y} = \mathbf{AX} + \mathbf{b}$$
 
-\begin{frame}{Conjugacy of the Prior - Exercise}
-Assume that you observe $n$ observations theorized to follow a bernoulli distribution $Y_{1},\ldots, Y_{n} \sim \mathrm{Bernoulli}(p)$. We can further assume that $p \sim \mathrm{beta}(a, b)$. Find the posterior distribution of the parameter $p|Y_{1},\ldots, Y_{n}$. 
-\end{frame}
+the mean vector and covariance matrix of $\mathbf{Y}$ is given by
 
-
-
-\begin{frame}{Conjugacy of the Prior - Exercise Cont.}
-\small
-The Bernoulli likelihood is given as follows:
 \begin{align*}
-f(y_{1}, \ldots, y_{n}|p) &= \prod_{i=1}^{n}(1-p)^{1-y_{i}}p^{y_{i}} \\
-&\propto p^{n\bar{y}} (1-p)^{n-n\bar{x}}
-\end{align*}
-The prior for the parameter $p$ is given $\mathrm{Beta}(a, b)$
-\begin{align*}
-f(p) &= \frac{1}{\beta(a, b)} p^{a-1}(1-p)^{b-1}\\
-&\propto p^{a-1}(1-p)^{b-1}
-\end{align*}
-Using Bayes' rule again yields:
-\begin{align*}
-f(p|y_{1},\ldots, y_{n}) &\propto   f(y_{1},\ldots, y_{n}|p) f(p) \\
-&\propto p^{n\bar{y}} (1-p)^{n-n\bar{x}} p^{a-1}(1-p)^{b-1}\\
-&\propto p^{n\bar{y}+a-1}(1-p)^{n+b-n\bar{y}-1}
-\end{align*}
-This is exactly the kernel of the Beta distribution:
-\begin{align*}
-p|y_{1},\ldots, y_{n} \sim\mathrm{Beta}(a+n\bar{y}, b + n(1-\bar{y}))
+\mathbf{\mu}_Y &= \mathbf{A\mu}_x + \mathbf{b}\\
+\mathbf{\Sigma}_{YY} &= \mathbf{A\Sigma_{XX}A}^T
 \end{align*}
 \end{frame}
 
 \begin{frame}
-\begin{center}
-\textbf{Questions}
-\end{center}
+\frametitle{Multivariate Normal Distribution}
+The form of the multivariate normal looks similar to that of the univariate normal.  A random $d$ vector $\mathbf{X}$ follows a multivariate normal distribution with mean vector $\mu$ and positive definite symmetric covariance matrix $\mathbf{\Sigma}$ if it has the density function
+
+$$f(\mathbf{x}|\mu, \mathbf{\Sigma}) = (2\pi)^{-d/2}|\mathbf{\Sigma}|^{-1/2} e^{-\frac{1}{2} (\mathbf{x} - \mathbf{\mu})^T \mathbf{\Sigma}^{-1}(\mathbf{x} - \mathbf{\mu})}$$
+
+We notationally denote a $d$ dimensional normal distribution as 
+
+$$\mathbf{X} \sim N_d(\mu, \mathbf{\Sigma})$$
+\end{frame}
+
+\begin{frame}
+\frametitle{Multivariate Normal Distribution}
+The \textbf{Mahalanobis distance} from $\mathbf{x}$ to $\mathbf{\mu}$ is given by the quadratic form
+
+$$\Delta = \sqrt{(\mathbf{x} - \mathbf{\mu})^T \mathbf{\Sigma}^{-1}(\mathbf{x} - \mathbf{\mu})}$$
+
+An important result is that a random vector $\mathbf{X}$ follows a multivariate distribution if and only if every linear function of $\mathbf{X}$ follows a univariate normal distribution.
+\vspace{5mm}
+
+In linear models, we often assume that $\mathbf{\Sigma} = \sigma^2\mathbf{I_d}$, in which case the density function reduces to
+
+$$f(\mathbf{x}|\mu, \sigma) = (2\pi \sigma)^{-d/2} e^{-\frac{1}{2} (\mathbf{x} - \mathbf{\mu})^T (\mathbf{x} - \mathbf{\mu})}$$
+\end{frame}
+
+\begin{frame}
+\frametitle{Partitioned Random Vectors}
+Suppose we have two random vectors $\mathbf{X}$ and $\mathbf{Y}$, where $\mathbf{X}$ has $d_1$ components and $\mathbf{Y}$ had $d_2$ components.  Let $\mathbf{Z}$ be the random $d_1 + d_2$ vector
+
+$$\mathbf{Z} = \begin{pmatrix} \mathbf{X} \\ \mathbf{Y} \end{pmatrix}$$
+
+Then the expected value and covariance matrix of $\mathbf{Z}$ is given by 
+\begin{align*}
+\mathbf{\mu}_Z &= E[\mathbf{Z}] = \begin{pmatrix} E[\mathbf{X}] \\ E[\mathbf{Y}] \end{pmatrix} = \begin{pmatrix} \mathbf{\mu}_X \\ \mathbf{\mu}_Y \end{pmatrix}\\
+\mathbf{\Sigma}_{ZZ} &= \begin{pmatrix} cov(\mathbf{X}, \mathbf{X}) & cov(\mathbf{X}, \mathbf{Y}) \\ cov(\mathbf{Y}, \mathbf{X}) & cov(\mathbf{Y}, \mathbf{Y})  \end{pmatrix}\\
+&= \begin{pmatrix}
+\mathbf{\Sigma_{XX}} & \mathbf{\Sigma}_{XY}\\
+\mathbf{\Sigma}_{YX} & \mathbf{\Sigma}_{YY}
+\end{pmatrix}
+\end{align*}
+
+where $\mathbf{\Sigma}_{XY} = \mathbf{\Sigma}_{YX}^T$. 
+\end{frame}
+
+\begin{frame}
+\frametitle{Marginal/Conditional Normal Distribution}
+The marginal distribution of $\mathbf{Y}$ is
+
+$$\mathbf{Y} \sim N_{d_2}(\mu_y, \mathbf{\Sigma}_{YY}$$
+
+The conditional distribution of $\mathbf{Y}$ given that $\mathbf{X} = \mathbf{x}$ is multivariate normal with mean vector and covariance matrix given by
+
+\begin{align*}
+\mu_{Y|X} &= \mu_Y + \mathbf{\Sigma}_{YX} \mathbf{\Sigma}_{XX}^{-1} (\mathbf{x} - \mu_X)\\
+\mathbf{\Sigma}_{Y|X} &= \mathbf{\Sigma}_{YY} - \mathbf{\Sigma}_{YX}\mathbf{\Sigma}_{XX}^{-1}\mathbf{\Sigma}_{XY}
+\end{align*}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Wishart Distribution}
+Given $n$ independent and identically distributed $d$ vectors
+
+$$\mathbf{X}_i \sim N_d(\mu , \mathbf{\Sigma})$$
+
+we say that the random positive-definite, symmetric matrix
+
+$$ \mathbf{W} = \sum_{i = 1}^n \mathbf{X_i} \mathbf{X_i}^T$$
+
+follows a \textbf{Wishart distribution} with $n$ degrees of freedom and matrix $\mathbf{\Sigma}$.  We denote the Wishart distribution by
+
+$$\mathbf{W} \sim \mathcal{W}_d(n, \mathbf{\Sigma})$$
+
+You can think of the Wishart as a randomly drawn covariance matrix multiplied by the degrees of freedom $n$, since $E[\mathbf{W}] = n\mathbf{\Sigma}$.  As $n \rightarrow \infty$, $\mathbf{W}/n \rightarrow \mathbf{\Sigma}$. 
+\end{frame}
+
+\begin{frame}
+\frametitle{Properties of the Wishart Distribution}
+\begin{enumerate}
+\item Let $\mathbf{W}_j \sim \mathcal{W}_d(n_j, \mathbf{\Sigma})$ be independent.  Then $\sum_{j = 1}^m \mathbf{W}_j \sim \mathcal{W}_d(\sum_{j=1}^m n_j, \mathbf{\Sigma})$
+\item Suppose $\mathbf{W} \sim \mathcal{W}_d(n, \mathbf{\Sigma})$ and let $\mathbf{A}$ be a constant matrix having full row rank.  Then $\mathbf{AWA}^T \sim \mathcal{W}_d(n, \mathbf{A\Sigma A}^T$).
+\item  Suppose $\mathbf{W} \sim \mathcal{W}_d(n, \mathbf{\Sigma})$ and let $\mathbf{a}$ be a fixed $d$ dimensional vector.  Then $\mathbf{a}^T\mathbf{Wa} \sim (\mathbf{a}^T\mathbf{\Sigma a})\chi^2_n$.
+\end{enumerate}
+
+You can think of the Wishart as a multidimensional chi-square distribution.  If $\mathbf{W}$ follows a Wishart distribution, then $\mathbf{W}^{-1}$ follows an \textbf{inverse Wishart distribution}.
+\end{frame}
+
+\begin{frame}
+\frametitle{Review Exercises}
+Given that 
+$$\mathbf{X} =  
+\begin{pmatrix}
+X_1\\
+X_2\\
+X_3
+\end{pmatrix}
+\sim N_3(\mathbf{\mu}, \mathbf{\Sigma}) 
+$$
+
+where
+
+$$\mathbf{\mu} = 
+\begin{pmatrix}
+\phantom{-}0\\
+\phantom{-}1\\
+-1
+\end{pmatrix}
+\qquad 
+\mathbf{\Sigma} =  
+\begin{pmatrix}
+3 & 0 & 1\\
+0 & 1 & 0\\
+1 & 0 & 2
+\end{pmatrix}
+$$
+
+\begin{enumerate}
+
+\item Find the correlation matrix $\rho$ of $\mathbf{X}$\\
+\item Find the marginal distribution of $X_2$.\\
+
+\item Find the marginal distribution of $\{X_1, X_3\}$.\\
+
+\item Find the conditional distribution of $X_1|X_3 = -1$.\\
+
+\item Find the conditional distribution of $X_1|\{X_2 = 1, X_3 = -1\}$\\
+
+\item Are $\{X_1, X_3\}$ and $X_2$ independent?\\
+
+\item Are $X_1 + X_2$ and $X_1 - X_2$ independent?\\  
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Solutions}
+\begin{enumerate}
+\item Find the correlation matrix $\rho$ of $\mathbf{X}$
+$$\rho = \begin{pmatrix}
+1 & 0 & 1/6\\
+0 & 1 & 0\\
+1/6 & 0 & 1
+\end{pmatrix}$$
+
+\item Find the marginal distribution of $X_2$.
+
+$$ X_2 \sim N(1, 1)$$
+\item Find the marginal distribution of $\{X_1, X_3\}$.
+
+$$\{X_1, X_3\} \sim N\left(\begin{pmatrix} 0 \\ -1 \end{pmatrix} , \begin{pmatrix} 3 & 1 \\ 1 & 2 \end{pmatrix}\right)$$
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Solutions}
+\begin{enumerate}
+\setcounter{enumi}{3}
+\item Find the conditional distribution of $X_1|X_3 = -1$.
+\vspace{5mm}
+
+Using the conditional distribution formula, the conditional distribution of $\{X_1, X_2\}$ given $X_3 = -1$ is
+
+\begin{align*}
+\mu &= \begin{pmatrix} 0 \\ 1 \end{pmatrix} + \begin{pmatrix} 1 \\ 0 \end{pmatrix} (1/2) (0) =  \begin{pmatrix} 0 \\ 1 \end{pmatrix}\\
+\mathbf{\Sigma} &= \begin{pmatrix} 3 & 0 \\0 & 1 \end{pmatrix} - \begin{pmatrix} 1 \\ 0 \end{pmatrix}(1/2) \begin{pmatrix} 1 \\ 0 \end{pmatrix}^T = \begin{pmatrix}5/2 & 0\\0 & 1\end{pmatrix}
+\end{align*}
+
+So looking at the marginal, the conditional distribution of $X_1$ is $N(0, 5/2)$.
+
+\item Find the conditional distribution of $X_1|\{X_2 = 1, X_3 = -1\}$
+$\{X_1, X_2\}$ given $X_3 = -1$ is
+
+You can do this using the conditional distribution formula or note that $X_1$ is independent of $X_2$ (from the next question).  So the answer will be the same as above.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Solutions}
+\begin{enumerate}
+\setcounter{enumi}{5}
+
+\item Are $\{X_1, X_3\}$ and $X_2$ independent?\\
+Yes.  Since they are multivariate normally distributed and the pairwise correlation between $X_2$ and $\{X_1, X_3\}$ is 0, they are independent.
+
+\item Are $X_1 + X_2$ and $X_1 - X_2$ independent?\\
+No, the covariance between  $X_1 + X_2$ and $X_1 - X_2$ is nonzero (see next question).  Also, both terms involve $X_1$ and $X_2$ so there's no reason to expect them to be independent.  
+\end{enumerate}
 \end{frame}
 
 \begin{frame}{Reference Guide}
