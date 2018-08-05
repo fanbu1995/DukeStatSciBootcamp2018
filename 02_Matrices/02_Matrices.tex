@@ -74,7 +74,7 @@
 % A subtitle is optional and this may be deleted
 \subtitle{Part II: Matrix Algebra}
 
-\author{Fan Bu \inst{1} \and Kyle Burris\inst{1}}
+\author{Fan Bu\inst{1} \and Kyle Burris\inst{1}}
 % - Give the names in the same order as the appear in the paper.
 % - Use the \inst{?} command only if the authors have different
 %   affiliation.
@@ -386,9 +386,15 @@ where the submatrix $\mathbf{A}_{ij}$ is referred to as the $ij$th block of $\ma
 \end{frame}
 
 \begin{frame}
-\begin{center}
-\Huge Team Exercises for Unit 1
-\end{center}
+\frametitle{Review Exercises}
+\begin{enumerate}
+\item Show, using the definition of a matrix product, that $(\mathbf{AB})^T = \mathbf{B}^T\mathbf{A}^T$.
+
+\item Show that the product of two upper-triangular matrices is also upper triangular.  What is $\mathbf{AB}_{ii}$?
+
+\item Give an example of two symmetric matrices whose product is not symmetric.  When will the product of two symmetric matrices be symmetric? 
+
+\end{enumerate}
 \end{frame}
 
 \begin{frame}
@@ -755,9 +761,18 @@ Similar to normal differentiation, we have the following rules:
 \end{frame}
 
 \begin{frame}
-\begin{center}
-\Huge Team Exercises for Unit 2
-\end{center}
+\frametitle{Review Exercises}
+\begin{enumerate}
+\item Show that the product of two orthogonal matrices is also orthogonal, assuming that the product is nonsingular.
+
+\item Show that if $\mathbf{P}$ is a projection matrix, then $\mathbf{I} - \mathbf{P}$ is also a projection matrix.
+
+\item Show that the eigenvalues of an idempotent matrix are either 0 or 1.
+
+\item Suppose the $\mathbf{Y}$ is an $n \times p$ data matrix.  There exists a centering matrix $\mathbf{C}$ such that $\mathbf{CY}$ subtracts the column means of $\mathbf{Y}$ from $\mathbf{Y}$.  As such, the column means of $\mathbf{CY}$ are all zero.  Find $\mathbf{C}$.  Is $\mathbf{C}$ a projection matrix?
+
+\item What is the Jacobian matrix for the polar coordinate transformation? ($x = r \cos (\theta)$, $y = r \sin (\theta))$
+\end{enumerate}
 \end{frame}
 
 \begin{frame}
