@@ -111,22 +111,6 @@
   \titlepage
 \end{frame}
 
-\begin{frame}
-\frametitle{Handout and Slides}
-
-Please follow along with the handout made available in the github repository
-
-\begin{center}
-https://github.com/DukeStatSci/MathBootcamp2017
-\end{center} 
-
-Your team exercises will be available in the handout.  I will make these slides (with the solutions) available after today's session.
-\end{frame}
-
-\begin{frame}{Outline}
-  \tableofcontents
-\end{frame}
-
 %%%%% Part 1: Probability theory %%%%%
 \section{Matrices: The Basics}
 \begin{frame}{Notation}
@@ -197,6 +181,12 @@ For example,
     43 & 50 \\
 \end{pmatrix}
 \]
+\end{frame}
+
+ \begin{frame}
+\frametitle{Intuition: Matrix Multiplication}
+
+\href{https://www.youtube.com/watch?v=XkY2DOUCWMU&index=4&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab}{\textbf{Matrix multiplication as composition}, by \textit{3Blue1Brown}}
 \end{frame}
 
 \begin{frame}
@@ -574,6 +564,12 @@ The inverse of a $2 \times 2$ nonsingular matrix
 where $k = a_{22}a_{11} - a_{12}a_{21}$.
 \end{frame}
 
+ \begin{frame}
+\frametitle{Intuition: Matrix Inverses}
+
+\href{https://www.youtube.com/watch?v=uQhTuRlWMxw&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=7}{\textbf{Inverse matrices}, by \textit{3Blue1Brown}}
+\end{frame}
+
 \begin{frame}
 \frametitle{Inverse Properties}
 Let $\mathbf{A}$ be a nonsingular $n \times n$ matrix.  Then
@@ -590,6 +586,8 @@ and more generally,
 
 \[(\mathbf{A_1 A_2 \cdots A_k})^{-1} = \mathbf{A_k}^{-1}\cdots \mathbf{A_2}^{-1} \mathbf{A}_1^{-1}\]
 \end{frame}
+
+
 
 \begin{frame}
 \frametitle{Orthogonal Matrices}
@@ -667,6 +665,12 @@ The set of eigenvalues is called the \textbf{spectrum} of $\mathbf{A}$.  All eig
 \vspace{5mm}
 
  A non-null vector $\mathbf{x}$ is an \textbf{eigenvector} of $\mathbf{A}$ if there exists a scalar $\lambda$ such that $\mathbf{Ax} = \lambda\mathbf{x}$.
+\end{frame}
+
+ \begin{frame}
+\frametitle{Intuition: Eigenvectors and Eigenvalues}
+
+\href{https://www.youtube.com/watch?v=PFDu9oVAE-g&index=13&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab}{\textbf{Eigenvectors and eigenvalues}, by \textit{3Blue1Brown}}
 \end{frame}
 
 \begin{frame}
@@ -811,261 +815,6 @@ The Jacobian matrix in this case is
 
 $$\begin{pmatrix} \frac{\partial x}{\partial r} & \frac{\partial x}{\partial \theta} \\ \frac{\partial y}{\partial r} & \frac{\partial y}{\partial \theta}\end{pmatrix} = \begin{pmatrix} \cos \theta & -r \sin \theta \\ \sin \theta & r \cos \theta \end{pmatrix}$$
 \end{frame}
-
-\section{Random Matrices and Multivariate Statistics}
-\begin{frame}
-\frametitle{Random Vectors}
-If we have $d$ random variables $X_1, X_2, \hdots, X_d$, each defined on the real line, we can write them as the $d$ dimensional column vector $$\mathbf{X} = (X_1, \cdots X_d)^T$$
-
-which we call a $d$-dimensional \textbf{random vector}.  The joint distribution function of the random vector $\mathbf{X}$ is
-
-\begin{align*}
-F_X(\mathbf{x}) &= F_X(x_1, \hdots, x_d) \\
-&= P(X_1 \leq x_1, \hdots, X_d \leq x_d)\\
-&= P(\mathbf{X} \leq \mathbf{x})
-\end{align*}
-
-If $F_X$ is absolutely continuous, then the joint density function $f_X$ of $\mathbf{X}$ is
-
-$$f_X(\mathbf{x}) = f_X(x_1, \hdots, x_d) = \frac{\partial ^d F_X(x_1, \hdots, x_d)}{\partial x_1 \cdots \partial x_d}$$
-\end{frame}
-
-\begin{frame}
-\frametitle{Random Vectors}
-To find the marginal density of a subset of the $d$ variables, you can just integrate the others out.  For example, if we have a joint bivariate density $f_{X_1,X_2}(x_1, x_2)$, then 
-
-$$f_{X_1}(x_1) = \int_{-\infty}^{\infty} f_{X_1,X_2}(x_1, x_2) dx_2 \qquad f_{X_2}(x_2) = \int_{-\infty}^{\infty} f_{X_1,X_2}(x_1, x_2) dx_1$$
-
-The components of a random vector $\mathbf{X}$ are \textbf{independent} if the joint distribution function is a product of the marginal distribution functions
-
-$$F_X(\mathbf{x}) = \prod_{i=1}^d F_i(x_i)$$
-
-In addition, the joint density is the product of marginals
-
-$$f_X(\mathbf{x}) = \prod_{i=1}^d f_i(x_i)$$
-\end{frame}
-
-\begin{frame}
-\frametitle{Expectation and Covariance}
-If $\mathbf{X}$ is a random vector with values in $\mathbb{R}^d$, then its expected value is given by the $d$ dimensional vector
-
-$$\mathbf{\mu}_X = E(\mathbf{X}) = (E(X_1), \cdots, E(X_d)) = (\mu_1, \cdots, \mu_d)^T$$
-
-and the $d \times d$ \textbf{covariance matrix} of $\mathbf{X}$ is 
-
-\begin{align*}
-\mathbf{\Sigma}_{XX} &= \text{cov}(\mathbf{X}, \mathbf{X}) \\
-&= E[(\mathbf{X} - \mathbf{\mu}_X)(\mathbf{X} - \mathbf{\mu}_X)^T]\\
-&= E[(X_1 - \mu_1, \cdots, X_d - \mu_d) (X_1 - \mu_1, \cdots, X_d - \mu_d)^T]\\
-&= 
-\begin{pmatrix}
-    \sigma_1^2 & \sigma_{12} & \dots  & \sigma_{1d}\\
-    \sigma_{21} & \sigma_2^2  & \dots  & \sigma_{2d}\\
-    \vdots & \vdots  & \ddots & \vdots \\
-    \sigma_{d1} & \sigma_{d2}  & \dots  & \sigma_d^2
-\end{pmatrix}
-\end{align*} 
-\end{frame}
-
-\begin{frame}
-\frametitle{Correlation Matrix}
-The \textbf{correlation matrix} of $\mathbf{X}$ can be obtained by from $\mathbf{\Sigma}_{XX}$ by dividing the $i$th row by $\sigma_i$ and the $j$th column by $\sigma_j$.  The $d \times d$ matrix is then
-
-$$P_{XX} = \begin{pmatrix}
-    1 & \rho_{12} & \dots  & \rho_{1d}\\
-    \rho_{21} & 1  & \dots  & \rho_{2d}\\
-    \vdots & \vdots  & \ddots & \vdots \\
-    \rho_{d1} & \rho_{d2}  & \dots  & 1
-\end{pmatrix}$$
-
-where 
-
-$$\rho_{ij} = \rho_{ji} = \begin{cases}
-\frac{\sigma_{ij}}{\sigma_i \sigma_j} & i \neq j\\
-1 & \text{otherwise}
-\end{cases}
-$$
-
-is the pairwise correlation coefficient between $X_i$ and $X_j$.  The correlation coefficient will always lie between $-1$ and $1$ and is a measure of association between $X_i$ and $X_j$.
-\end{frame}
-
-\begin{frame}
-\frametitle{Linear Functions of Random Vectors}
-If $\mathbf{Y}$ is a linear function of $\mathbf{X}$ such that
-
-$$\mathbf{Y} = \mathbf{AX} + \mathbf{b}$$
-
-the mean vector and covariance matrix of $\mathbf{Y}$ is given by
-
-\begin{align*}
-\mathbf{\mu}_Y &= \mathbf{A\mu}_x + \mathbf{b}\\
-\mathbf{\Sigma}_{YY} &= \mathbf{A\Sigma_{XX}A}^T
-\end{align*}
-\end{frame}
-
-\begin{frame}
-\frametitle{Multivariate Normal Distribution}
-The form of the multivariate normal looks similar to that of the univariate normal.  A random $d$ vector $\mathbf{X}$ follows a multivariate normal distribution with mean vector $\mu$ and positive definite symmetric covariance matrix $\mathbf{\Sigma}$ if it has the density function
-
-$$f(\mathbf{x}|\mu, \mathbf{\Sigma}) = (2\pi)^{-d/2}|\mathbf{\Sigma}|^{-1/2} e^{-\frac{1}{2} (\mathbf{x} - \mathbf{\mu})^T \mathbf{\Sigma}^{-1}(\mathbf{x} - \mathbf{\mu})}$$
-
-We notationally denote a $d$ dimensional normal distribution as 
-
-$$\mathbf{X} \sim N_d(\mu, \mathbf{\Sigma})$$
-\end{frame}
-
-\begin{frame}
-\frametitle{Multivariate Normal Distribution}
-The \textbf{Mahalanobis distance} from $\mathbf{x}$ to $\mathbf{\mu}$ is given by the quadratic form
-
-$$\Delta = \sqrt{(\mathbf{x} - \mathbf{\mu})^T \mathbf{\Sigma}^{-1}(\mathbf{x} - \mathbf{\mu})}$$
-
-An important result is that a random vector $\mathbf{X}$ follows a multivariate distribution if and only if every linear function of $\mathbf{X}$ follows a univariate normal distribution.
-\vspace{5mm}
-
-In linear models, we often assume that $\mathbf{\Sigma} = \sigma^2\mathbf{I_d}$, in which case the density function reduces to
-
-$$f(\mathbf{x}|\mu, \sigma) = (2\pi \sigma)^{-d/2} e^{-\frac{1}{2} (\mathbf{x} - \mathbf{\mu})^T (\mathbf{x} - \mathbf{\mu})}$$
-\end{frame}
-
-\begin{frame}
-\frametitle{Partitioned Random Vectors}
-Suppose we have two random vectors $\mathbf{X}$ and $\mathbf{Y}$, where $\mathbf{X}$ has $d_1$ components and $\mathbf{Y}$ had $d_2$ components.  Let $\mathbf{Z}$ be the random $d_1 + d_2$ vector
-
-$$\mathbf{Z} = \begin{pmatrix} \mathbf{X} \\ \mathbf{Y} \end{pmatrix}$$
-
-Then the expected value and covariance matrix of $\mathbf{Z}$ is given by 
-\begin{align*}
-\mathbf{\mu}_Z &= E[\mathbf{Z}] = \begin{pmatrix} E[\mathbf{X}] \\ E[\mathbf{Y}] \end{pmatrix} = \begin{pmatrix} \mathbf{\mu}_X \\ \mathbf{\mu}_Y \end{pmatrix}\\
-\mathbf{\Sigma}_{ZZ} &= \begin{pmatrix} cov(\mathbf{X}, \mathbf{X}) & cov(\mathbf{X}, \mathbf{Y}) \\ cov(\mathbf{Y}, \mathbf{X}) & cov(\mathbf{Y}, \mathbf{Y})  \end{pmatrix}\\
-&= \begin{pmatrix}
-\mathbf{\Sigma_{XX}} & \mathbf{\Sigma}_{XY}\\
-\mathbf{\Sigma}_{YX} & \mathbf{\Sigma}_{YY}
-\end{pmatrix}
-\end{align*}
-
-where $\mathbf{\Sigma}_{XY} = \mathbf{\Sigma}_{YX}^T$. 
-\end{frame}
-
-\begin{frame}
-\frametitle{Marginal/Conditional Normal Distribution}
-The marginal distribution of $\mathbf{Y}$ is
-
-$$\mathbf{Y} \sim N_{d_2}(\mu_y, \mathbf{\Sigma}_{YY}$$
-
-The conditional distribution of $\mathbf{Y}$ given that $\mathbf{X} = \mathbf{x}$ is multivariate normal with mean vector and covariance matrix given by
-
-\begin{align*}
-\mu_{Y|X} &= \mu_Y + \mathbf{\Sigma}_{YX} \mathbf{\Sigma}_{XX}^{-1} (\mathbf{x} - \mu_X)\\
-\mathbf{\Sigma}_{Y|X} &= \mathbf{\Sigma}_{YY} - \mathbf{\Sigma}_{YX}\mathbf{\Sigma}_{XX}^{-1}\mathbf{\Sigma}_{XY}
-\end{align*}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Wishart Distribution}
-Given $n$ independent and identically distributed $d$ vectors
-
-$$\mathbf{X}_i \sim N_d(\mu , \mathbf{\Sigma})$$
-
-we say that the random positive-definite, symmetric matrix
-
-$$ \mathbf{W} = \sum_{i = 1}^n \mathbf{X_i} \mathbf{X_i}^T$$
-
-follows a \textbf{Wishart distribution} with $n$ degrees of freedom and matrix $\mathbf{\Sigma}$.  We denote the Wishart distribution by
-
-$$\mathbf{W} \sim \mathcal{W}_d(n, \mathbf{\Sigma})$$
-
-You can think of the Wishart as a randomly drawn covariance matrix multiplied by the degrees of freedom $n$, since $E[\mathbf{W}] = n\mathbf{\Sigma}$.  As $n \rightarrow \infty$, $\mathbf{W}/n \rightarrow \mathbf{\Sigma}$. 
-\end{frame}
-
-\begin{frame}
-\frametitle{Properties of the Wishart Distribution}
-\begin{enumerate}
-\item Let $\mathbf{W}_j \sim \mathcal{W}_d(n_j, \mathbf{\Sigma})$ be independent.  Then $\sum_{j = 1}^m \mathbf{W}_j \sim \mathcal{W}_d(\sum_{j=1}^m n_j, \mathbf{\Sigma})$
-\item Suppose $\mathbf{W} \sim \mathcal{W}_d(n, \mathbf{\Sigma})$ and let $\mathbf{A}$ be a constant matrix having full row rank.  Then $\mathbf{AWA}^T \sim \mathcal{W}_d(n, \mathbf{A\Sigma A}^T$).
-\item  Suppose $\mathbf{W} \sim \mathcal{W}_d(n, \mathbf{\Sigma})$ and let $\mathbf{a}$ be a fixed $d$ dimensional vector.  Then $\mathbf{a}^T\mathbf{Wa} \sim (\mathbf{a}^T\mathbf{\Sigma a})\chi^2_n$.
-\end{enumerate}
-
-You can think of the Wishart as a multidimensional chi-square distribution.  If $\mathbf{W}$ follows a Wishart distribution, then $\mathbf{W}^{-1}$ follows an \textbf{inverse Wishart distribution}.
-\end{frame}
-
-\begin{frame}
-\begin{center}
-\Huge Team Exercises for Unit 3
-\end{center}
-\end{frame}
-
-\begin{frame}
-\frametitle{Solutions}
-\begin{enumerate}
-\item Find the correlation matrix $\rho$ of $\mathbf{X}$
-$$\rho = \begin{pmatrix}
-1 & 0 & 1/6\\
-0 & 1 & 0\\
-1/6 & 0 & 1
-\end{pmatrix}$$
-
-\item Find the marginal distribution of $X_2$.
-
-$$ X_2 \sim N(1, 1)$$
-\item Find the marginal distribution of $\{X_1, X_3\}$.
-
-$$\{X_1, X_3\} \sim N\left(\begin{pmatrix} 0 \\ -1 \end{pmatrix} , \begin{pmatrix} 3 & 1 \\ 1 & 2 \end{pmatrix}\right)$$
-\end{enumerate}
-\end{frame}
-
-\begin{frame}
-\frametitle{Solutions}
-\begin{enumerate}
-\setcounter{enumi}{3}
-\item Find the conditional distribution of $X_1|X_3 = -1$.
-\vspace{5mm}
-
-Using the conditional distribution formula, the conditional distribution of $\{X_1, X_2\}$ given $X_3 = -1$ is
-
-\begin{align*}
-\mu &= \begin{pmatrix} 0 \\ 1 \end{pmatrix} + \begin{pmatrix} 1 \\ 0 \end{pmatrix} (1/2) (0) =  \begin{pmatrix} 0 \\ 1 \end{pmatrix}\\
-\mathbf{\Sigma} &= \begin{pmatrix} 3 & 0 \\0 & 1 \end{pmatrix} - \begin{pmatrix} 1 \\ 0 \end{pmatrix}(1/2) \begin{pmatrix} 1 \\ 0 \end{pmatrix}^T = \begin{pmatrix}5/2 & 0\\0 & 1\end{pmatrix}
-\end{align*}
-
-So looking at the marginal, the conditional distribution of $X_1$ is $N(0, 5/2)$.
-
-\item Find the conditional distribution of $X_1|\{X_2 = 1, X_3 = -1\}$
-$\{X_1, X_2\}$ given $X_3 = -1$ is
-
-You can do this using the conditional distribution formula or note that $X_1$ is independent of $X_2$ (from the next question).  So the answer will be the same as above.
-\end{enumerate}
-\end{frame}
-
-\begin{frame}
-\frametitle{Solutions}
-\begin{enumerate}
-\setcounter{enumi}{5}
-
-\item Are $\{X_1, X_3\}$ and $X_2$ independent?\\
-Yes.  Since they are multivariate normally distributed and the pairwise correlation between $X_2$ and $\{X_1, X_3\}$ is 0, they are independent.
-
-\item Are $X_1 + X_2$ and $X_1 - X_2$ independent?\\
-No, the covariance between  $X_1 + X_2$ and $X_1 - X_2$ is nonzero (see next question).  Also, both terms involve $X_1$ and $X_2$ so there's no reason to expect them to be independent.  
-\end{enumerate}
-\end{frame}
-
-\begin{frame}
-\frametitle{Solutions}
-\begin{enumerate}
-\setcounter{enumi}{7}
-\item Let $\mathbf{Y} = \mathbf{AX} + \mathbf{a}$ where $\mathbf{A} = \begin{pmatrix} 1 & \phantom{-}1 & 0\\1 & -1 & 0\end{pmatrix}$ and $\mathbf{a} = \begin{pmatrix}0 \\ 1 \end{pmatrix}$.  Find the distribution of $\mathbf{Y}$.
-
-$$\mathbf{Y} \sim N(\mathbf{A}\mu + \mathbf{a}, \mathbf{A\Sigma A}^T) = N\left(  \begin{pmatrix}1 \\ 0 \end{pmatrix}, \begin{pmatrix}4 & 2\\2 & 4\end{pmatrix}\right) $$
-
-\item What is the distribution of $W = (\mathbf{X - \mu})(\mathbf{X - \mu})^T$?
-
-A 3-dimensional Wishart distribution with one degree of freedom and matrix $\mathbf{\Sigma}$.
-\end{enumerate}
-\end{frame}
-
-
 
 
 
