@@ -1,3 +1,15 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %----------------------------------------------------------------------------------------
 %	PACKAGES AND THEMES
@@ -136,8 +148,9 @@ $$
 if for any $\epsilon > 0$, there exists $\delta > 0$ such that \\
 $$
 \vert f(x)-L \vert < \epsilon \text{ whenever } 
-\vert x-a \vert < \delta.
+0 < \vert x-a \vert < \delta.
 $$
+(The value of $f(x)$ approaches $L$ when $x$ approaches $a$.)
 \\~\\
 \textbf{Left-hand limit}:
 $\lim_{x\rightarrow a^{-}}f(x) = L$ if for any $\epsilon > 0$, there exists $\delta > 0$ such that
@@ -149,7 +162,7 @@ $\lim_{x\rightarrow a^{+}}f(x) = L$ if for any $\epsilon > 0$, there exists $\de
 $\vert f(x)-L \vert < \epsilon$ whenever
 $ a < x < a+\delta$.
 
-\end{frame}
+ \end{frame}
 
 %------------------------------------------------
 
@@ -174,6 +187,32 @@ $ a < x < a+\delta$.
 \vspace*{1.5in}
 \item How to define $\lim_{x \rightarrow \infty}f(x) = a$ for $-\infty < a < +\infty$ ?
 \vspace*{1.5in}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Infinite Limit/Limit at Infinity}
+\begin{itemize}
+\item How to define $\lim_{x \rightarrow a}f(x) = \infty$ for $-\infty < a < +\infty$ ?
+
+\vspace*{0.1in}
+For any $M > 0$, there exists $\delta > 0$ such that
+$$
+f(x) > M \text{ whenever } 
+0 < \vert x-a \vert < \delta.
+$$
+(The value of $f(x)$ approaches $\infty$ when $x$ approaches $a$.)
+\vspace*{0.2in}
+\item How to define $\lim_{x \rightarrow \infty}f(x) = a$ for $-\infty < a < +\infty$ ?
+
+\vspace*{0.1in}
+For any $\epsilon > 0$, there exists a $M > 0$ such that
+$$
+\vert f(x)-a \vert < \epsilon \text{ whenever } 
+x > M.
+$$
+(The value of $f(x)$ approaches $a$ when $x$ approaches $\infty$.)
+\vspace*{0.2in}
 \end{itemize}
 \end{frame}
 
@@ -222,7 +261,7 @@ This function is discontinuous at $x=5$.
 This function is discontinuous (but right continuous) at any integer $x$.
 
 \end{columns}
-\end{frame}
+ \end{frame}
 
 % \begin{frame}
 % \frametitle{Other Useful Continuity Notions}
@@ -412,20 +451,39 @@ Any local minimum of a convex function is also a global minimum; a strictly conv
 \end{frame}
 
 \begin{frame}
-\frametitle{Review Exercises: Morning Session}
-5. The following figure shows the graphs of $f$, $f'$, $f''$, and $f'''$. Identify each curve.
+\frametitle{Taylor Expansion}
+
+\href{https://youtu.be/3d6DsjIBzJ4}{\textbf{Talor Series}, by \textit{3Blue1Brown}}
+\end{frame}
+
+\begin{frame}
+\frametitle{Challenge Exercises: Morning Session}
+\begin{columns}[t] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
+
+\column{.47\textwidth} % Left column and width
+1. Find the Taylor expansion of $f(x) = \tan x$ around $0$ and use the result to show that $\lim_{x \rightarrow 0} \frac{\tan x}{x} = 1$.
+\\~\\
+2. Calculate $\sum_{x=0}^{\infty} \frac{e^{-\lambda}\lambda^x}{x!}$. Here $\lambda > 0$ is a constant and $x \in \mathbb{N}$. ($0!=1$.)
+% Use the Taylor expansion of $f(x) = e^x$ around $0$.
+\\~\\
+3. Let $f(x) = x^{\alpha - 1}(1-x)^{\beta-1}, x\in (0,1)$, where $\alpha, \beta > 0$ are constants. Find all the minimums and maximums (if there are any) of $f$.
+
+\column{.47\textwidth} % Right column and width
+% 4. $f(x)$ is a convex function on $\mathbb{R}$, $P = (x_0,f(x_0))$ is a point on $f(x)$, and $l$ is the tangent line of the curve of $f(x)$ at $P$. Choose the correct statement(s).
+% \begin{itemize}
+% \item[A] $l$ must lie above or on the curve of $f(x)$;
+% \item[B] $l$ must lie below or on the curve of $f(x)$;
+% \item[C] $l$ can intersect with $f(x)$ at multiple points.
+% \end{itemize}
+4. The following figure shows the graphs of $f$, $f'$, $f''$, and $f'''$. Identify each curve.
 \vspace*{-0.2in}
 \begin{figure}[H]
 \centering
 \includegraphics[width=5.5cm]{Derivative-ex-1.png}
 \end{figure}
 % Answer: d,c,b,a
-\end{frame}
 
-\begin{frame}
-\frametitle{Taylor Expansion}
-
-\href{https://youtu.be/3d6DsjIBzJ4}{\textbf{Taylor Series}, by \textit{3Blue1Brown}}
+\end{columns}
 \end{frame}
 
 %------------------------------------------------
@@ -699,13 +757,40 @@ $$
 
 \end{frame}
 
+%------------------------------------------------
+\begin{frame}
+\frametitle{Challenge Exercises: Afternoon Session}
+\begin{columns}[t] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
+
+\column{.47\textwidth} % Left column and width
+1. Given that $\int_1^{\infty} \frac{1}{x} dx = \infty$ and $\sum_{n=1}^{\infty} \frac{1}{n} = \infty$, use two methods to show that $\sum_{n=1}^{\infty} \frac{1}{n^p} = \infty$ for any $p \in (0,1)$.
+\\~\\
+%2. Find $\lim_{x\rightarrow 3} \frac{x}{x-3} \int_{3}^{x} \frac{\sin t}{t} dt$.
+2. Evaluate the following definite integrals:
+\begin{itemize}
+\item $\int_0^1 \frac{2x}{1+x^4} dx$.
+% answer: $\pi/4$
+\item $\int_0^{\pi} e^x\sin xdx$.
+% answer: $(e^{\pi}+1)/2$
+\end{itemize}
+%~\\
+\column{.47\textwidth} % Right column and width
+3. The Gamma function $\Gamma (x)$ is defined for any real number $x > 0$ as $\Gamma (x) = \int_{0}^{\infty} t^{x-1}e^{-t}dt$. Show that $\Gamma (x+1) = x\Gamma (x)$.
+% Use integration by parts.
+\\~\\
+4. Evaluate $\int_{0}^{\infty} e^{x^2} dx$.\\
+(Hint: start with $\int_{0}^{\infty}\int_{0}^{\infty} e^{x^2+y^2} dxdy$.)
+%\\~\\
+\end{columns}
+
+\end{frame}
 
 
 %------------------------------------------------
 
-\begin{frame}
-\Huge{\centerline{The End}}
-\end{frame}
+% \begin{frame}
+% \Huge{\centerline{The End}}
+% \end{frame}
 
 %----------------------------------------------------------------------------------------
 
