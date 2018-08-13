@@ -1,3 +1,15 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %----------------------------------------------------------------------------------------
 %	PACKAGES AND THEMES
@@ -328,6 +340,16 @@ If we adopt the MLE estimator $\hat{\sigma}^2$ for $\sigma^2$ instead, where $\h
 
 \begin{frame}
 \frametitle{Review Exercises: Morning Session}
+\begin{columns}[t]
+\column{.47\textwidth}
+1. Let $X_1,X_2,\ldots,X_n$ be i.i.d. $\text{Poisson}(\lambda)$. Let $Y_n = (\sum_{i=1}^n X_i - \lambda)/\sqrt{n}$. When $n$ is large, $Y_n$ is approximately a normal variable with mean $\mu$ and variance $\sigma^2$. What are $\mu$ and $\sigma^2$ ?
+
+\column{.47\textwidth}
+2. Let $X_1,X_2,\ldots,X_n$ be i.i.d. $\text{Exp}(\beta)$ with pdf $f(x)=\beta e^{-\beta x} (x > 0)$. Show that $\bar{X} = \sum_{i=1}^n X_i/n$ is a sufficient statistic for $\beta$, and find the MLE of $\beta$.
+\\~\\
+3. Let $X$ be a sample from $N(0,\sigma^2)$. Find an unbiased estimator of $\sigma^2$.
+
+\end{columns}
 \end{frame}
 
 %------------------------------------------------
@@ -337,6 +359,10 @@ If we adopt the MLE estimator $\hat{\sigma}^2$ for $\sigma^2$ instead, where $\h
 \begin{frame}
 \frametitle{Intro to Hypothesis Testing}
 \href{https://youtu.be/VK-rnA3-41c}{\textbf{Video tutorial}, by \textit{mathtutordvd}}
+\end{frame}
+
+\begin{frame}
+\frametitle{Challenge Exercises: Morning Session}
 \end{frame}
 
 \begin{frame}
@@ -518,10 +544,10 @@ where $t_{df,p}$ is the $p\times 100\%$th quantile of a student-$t$ distribution
 % \end{theorem}
 % \end{frame}
 
-\begin{frame}
-\frametitle{Review Exercises: Afternoon Session}
+% \begin{frame}
+% \frametitle{Review Exercises: Afternoon Session}
 
-\end{frame}
+% \end{frame}
 
 %------------------------------------------------
 
@@ -617,8 +643,8 @@ What is the posterior distribution of $\theta$ given the match outcomes in the p
 \end{enumerate}
 \end{frame}
 
-\begin{frame}
-\Huge{\centerline{The End}}
-\end{frame}
+% \begin{frame}
+% \Huge{\centerline{The End}}
+% \end{frame}
 
 \end{document}
