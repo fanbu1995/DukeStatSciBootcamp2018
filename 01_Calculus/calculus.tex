@@ -455,12 +455,12 @@ Let $a \leq d \leq b \in \mathbb{R}$:
 \frametitle{The Fundamental Theorem of Calculus}
 If $f$ is continuous on $[a,b]$, then:
 \begin{itemize}
-\item function $g(x) = \int_a^x f(x) dx, a\leq x \leq b$ is continuous on $[a,b]$ and differentiable on $(a,b)$, and $g'(x) = f(x)$;
+\item function $g(x) = \int_a^x f(s) ds, a\leq x \leq b$ is continuous on $[a,b]$ and differentiable on $(a,b)$, and $g'(x) = f(x)$;
 \item $\int_a^b f(x)dx = F(b)-F(a)$, where $F$ is any anti-derivative of $f$ ($F' = f$).
 \end{itemize}
 \vspace*{0.15in}
 A mini-exercise: 
-find $\frac{d}{dx}\int_1^x \sin x^4 dx$.
+find $\frac{d}{dx}\int_1^x \sin t^4 dt$.
 
 \end{frame}
 
@@ -483,7 +483,7 @@ $$
 \begin{enumerate}
 \item Calculate $\int_{1}^e \frac{\ln x}{x} dx$.
 \vspace*{1.2in}
-\item Calculate $\int_{0}^1 x \cos x dx$.
+\item Calculate $\int_{0}^{\pi} x \cos x dx$.
 \vspace*{1.2in}
 \end{enumerate}
 \end{frame}
@@ -506,48 +506,56 @@ if this limit exists; similarly, if $f$ is continuous on $(a,b]$ and is disconti
 \end{frame}
 
 \begin{frame}
-\frametitle{Improper Integrals: Exercises}
-\begin{enumerate}
-\item For what values of $p \in \mathbb{R}$ is the integral
+%\frametitle{Improper Integrals: Exercises}
+\frametitle{Improper Integrals: Mini-Exercise}
+%\begin{enumerate}
+%\item For what values of $p \in \mathbb{R}$ is the integral
+%$$
+%\int_1^{\infty} \frac{1}{x^p} dx
+%$$
+%convergent?
+%% answer: convergent if $p>1$ and divergent if $p \leq 1$.
+%\vspace*{1in}
+%\item Evaluate $\int_2^5 \frac{1}{\sqrt{x-2}} dx$.
+%% answer: 2\sqrt{3}.
+%\vspace*{1.2in}
+%\end{enumerate}
+For what values of $p \in \mathbb{R}$ is the integral
 $$
 \int_1^{\infty} \frac{1}{x^p} dx
 $$
 convergent?
-% answer: convergent if $p>1$ and divergent if $p \leq 1$.
-\vspace*{1in}
-\item Evaluate $\int_2^5 \frac{1}{\sqrt{x-2}} dx$.
-% answer: 2\sqrt{3}.
 \vspace*{1.2in}
-\end{enumerate}
 \end{frame}
 
 %------------------------------------------------
 
-\section{Sequences and Series}
-\begin{frame}
-\frametitle{Basics of Sequences}
-A \textbf{sequence }is a list of numbers written in a definite order. We often denote a sequence $\{a_1,a_2,a_3,\ldots\}$ by $\{a_n\}$ or $\{a_n\}_{n=1}^{\infty}$.
-\\~\\
-A sequence $\{a_n\}$ has \textbf{limit} $L$ (written as $\lim_{n \rightarrow \infty} a_n = L$, or $a_n \rightarrow L$ as $n\rightarrow \infty$) if for every $\epsilon > 0$ there is a corresponding integer $N$ such that $\vert a_n - L \vert < \epsilon$ whenever $n > N$.
-\\~\\
-If for every $n \in \mathbb{N}$, $a_n \leq a_{n+1}$ (increasing) or $a_n \geq a_{n+1}$ (decreasing), then the sequence $\{a_n\}$ is \textbf{monotonic}. If there exists a number $M > 0$ such that $\vert a_n \vert \leq M$ for every $n$ then the sequence $\{a_n\}$ is \textbf{bounded}.
-\\~\\
-\textbf{Monotonic Sequence Theorem:} Every bounded, monotonic sequence is convergent (has a limit).
-\end{frame}
-
-\begin{frame}
-\frametitle{Sequences: Exercises}
-\begin{enumerate}
-\item Find the limit of the sequence ${a_n}$ where $a_n = \left(1+\frac{1}{n}\right)^n$, $n \in \mathbb{N}$.
-\vspace*{1.2in}
-\item Let $a_n = \frac{2^n}{n!}$, $n \in \mathbb{N}$. Is the sequence ${a_n}$ convergent? If so, what is its limit?
-\vspace*{1.2in}
-\end{enumerate}
-\end{frame}
+%\section{Sequences and Series}
+\section{Series}
+%\begin{frame}
+%\frametitle{Basics of Sequences}
+%A \textbf{sequence }is a list of numbers written in a definite order. We often denote a sequence $\{a_1,a_2,a_3,\ldots\}$ by $\{a_n\}$ or $\{a_n\}_{n=1}^{\infty}$.
+%\\~\\
+%A sequence $\{a_n\}$ has \textbf{limit} $L$ (written as $\lim_{n \rightarrow \infty} a_n = L$, or $a_n \rightarrow L$ as $n\rightarrow \infty$) if for every $\epsilon > 0$ there is a corresponding integer $N$ such that $\vert a_n - L \vert < \epsilon$ whenever $n > N$.
+%\\~\\
+%If for every $n \in \mathbb{N}$, $a_n \leq a_{n+1}$ (increasing) or $a_n \geq a_{n+1}$ (decreasing), then the sequence $\{a_n\}$ is \textbf{monotonic}. If there exists a number $M > 0$ such that $\vert a_n \vert \leq M$ for every $n$ then the sequence $\{a_n\}$ is \textbf{bounded}.
+%\\~\\
+%\textbf{Monotonic Sequence Theorem:} Every bounded, monotonic sequence is convergent (has a limit).
+%\end{frame}
+%
+%\begin{frame}
+%\frametitle{Sequences: Exercises}
+%\begin{enumerate}
+%\item Find the limit of the sequence ${a_n}$ where $a_n = \left(1+\frac{1}{n}\right)^n$, $n \in \mathbb{N}$.
+%\vspace*{1.2in}
+%\item Let $a_n = \frac{2^n}{n!}$, $n \in \mathbb{N}$. Is the sequence ${a_n}$ convergent? If so, what is its limit?
+%\vspace*{1.2in}
+%\end{enumerate}
+%\end{frame}
 
 \begin{frame}
 \frametitle{Basics of Series}
-A \textbf{series} can be thought of as the infinite sum of a sequence ${a_n}$, written as $\sum_{n=1}^{\infty} a_n$ or $\sum a_n$. More formally, it can be defined by taking the limit of partial sums $\{s_n\}$, where $s_n = \sum_{i=1}^{n} a_i$: if $\lim_{n \rightarrow \infty} s_n$ exists then the series $\sum a_n$ is convergent, otherwise it is divergent.
+A \textbf{series} can be thought of as the infinite sum of a sequence $\{a_n\}$, written as $\sum_{n=1}^{\infty} a_n$ or $\sum a_n$. More formally, it can be defined by taking the limit of partial sums $\{s_n\}$, where $s_n = \sum_{i=1}^{n} a_i$: if $\lim_{n \rightarrow \infty} s_n$ exists then the series $\sum a_n$ is convergent, otherwise it is divergent.
 \\~\\
 If $\sum_{n=1}^{\infty} a_n$ is convergent, then $\lim_{n \rightarrow \infty} a_n = 0$.
 \\~\\
@@ -560,17 +568,17 @@ $\sum_{n=1}^{\infty} ar^{n-1} = \frac{a}{1-r}$.
 If $\vert r \vert \geq 1$, the geometric series is divergent.
 \end{frame}
 
-\begin{frame}
-\frametitle{Series: Exercises}
-\begin{enumerate}
-\item Show that $\sum_{n=1}^{\infty} \frac{1}{n(n+1)}$ is convergent and find its sum.
-% answer: 1; simplify the expression of the partial sum and take the limit.
-\vspace*{1.2in}
-\item Find $\sum_{n=0}^{\infty} x^n$ where $\vert x \vert < 1$.
-% answer: $\frac{1}{1-x}$.
-\vspace*{1.2in}
-\end{enumerate}
-\end{frame}
+%\begin{frame}
+%\frametitle{Series: Exercises}
+%\begin{enumerate}
+%\item Show that $\sum_{n=1}^{\infty} \frac{1}{n(n+1)}$ is convergent and find its sum.
+%% answer: 1; simplify the expression of the partial sum and take the limit.
+%\vspace*{1.2in}
+%\item Find $\sum_{n=0}^{\infty} x^n$ where $\vert x \vert < 1$.
+%% answer: $\frac{1}{1-x}$.
+%\vspace*{1.2in}
+%\end{enumerate}
+%\end{frame}
 
 \begin{frame}
 \frametitle{Convergence of Series}
@@ -584,7 +592,7 @@ Commonly used tests for convergence:
 \end{itemize}
 %\item \textbf{The limit comparison test}: Suppose that $\sum a_n$ and $\sum b_n$ are series with positive terms. If $\lim_{n \rightarrow \infty} \frac{a_n}{b_n} = c$ where $c$ is a finite positive number, then either both series converge or both diverge.
 \item \href{https://youtu.be/xRyXz_UZ14Q}{\textbf{The integral test} (by \textit{Khan Academy})}.
-\item \textbf{The alternating series test}: If the alternating series $\sum_{n=1}^{\infty} (-1)^{n-1} b_n$ ($b_n > 0$) satisfies (i) $b_{n+1} \leq b_n$ for all $n$, and (ii) $\lim_{n \rightarrow \infty} b_n = 0$ then the series is convergent.
+%\item \textbf{The alternating series test}: If the alternating series $\sum_{n=1}^{\infty} (-1)^{n-1} b_n$ ($b_n > 0$) satisfies (i) $b_{n+1} \leq b_n$ for all $n$, and (ii) $\lim_{n \rightarrow \infty} b_n = 0$ then the series is convergent.
 \end{enumerate}
 \end{frame}
 
@@ -693,9 +701,9 @@ $$
 \begin{enumerate}
 \item Let $f(x,y,z)=ye^x \ln z + z \tan z$ ($z \in (0,\frac{\pi}{2})$) and $g(x,y,z)=x^3y+y^3z+z^5+\sqrt{xy}z$.\\ Compute $\frac{\partial f}{\partial y}$, $\frac{\partial f}{\partial z}$, $\frac{\partial g}{\partial x}$, and $\frac{\partial g}{\partial y}$.
 %\\~\\ answer: $e^x \ln z$, $\frac{ye^x}{z}+\tan z + \frac{z}{\cos^2 z}$, $3x^2y + \frac{\sqrt{y}z}{2\sqrt{x}}$, and $x^3 + 3y^2 z + \frac{\sqrt{x}z}{2\sqrt{y}}$.
-\vspace*{0.5in}
-\item $f(x,y) = \frac{1}{\sqrt{2\pi y^2}}e^{-\frac{(x-s)^2}{2y^2}}$, where $s \in \mathbb{R}$ is a constant. Obtain the gradient vector and Hessian matrix of $f$.
-\vspace*{0.5in}
+\vspace*{0.3in}
+\item $f(x,y) = \frac{1}{\sqrt{2\pi y^2}}e^{-\frac{(x-s)^2}{2y^2}}$, where $s \in \mathbb{R}$ is a constant, and $y>0$. Obtain the gradient vector and Hessian matrix of $g(x,y)=\ln f(x,y)$.
+\vspace*{0.3in}
 \item Evaluate the double integral $\int_1^3 \int_0^2 (xy + x^2y^3)dydx$.
 \end{enumerate}
 
