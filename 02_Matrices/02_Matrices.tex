@@ -750,8 +750,6 @@ Similar to normal differentiation, we have the following rules:
 
 \item Show that the eigenvalues of an idempotent matrix are either 0 or 1.
 
-\item Suppose the $\mathbf{Y}$ is an $n \times p$ data matrix.  There exists a centering matrix $\mathbf{C}$ such that $\mathbf{CY}$ subtracts the column means of $\mathbf{Y}$ from $\mathbf{Y}$.  As such, the column means of $\mathbf{CY}$ are all zero.  Find $\mathbf{C}$.  Is $\mathbf{C}$ a projection matrix?
-
 \item What is the Jacobian matrix for the polar coordinate transformation? ($x = r \cos (\theta)$, $y = r \sin (\theta))$
 \end{enumerate}
 \end{frame}
@@ -779,15 +777,6 @@ Let $\lambda$ be an eigenvalue of an idempotent matrix $\mathbf{A}$.  Then there
 
 \begin{frame}
 \frametitle{Problem 4}
-The centering matrix is 
-
-$$\mathbf{C} = (\mathbf{I} - \mathbf{1}(\mathbf{1}^T \mathbf{1})^{-1} \mathbf{1}^T)$$
-
-It is not difficult to show that $\mathbf{P} = \mathbf{1}(\mathbf{1}^T \mathbf{1})^{-1} \mathbf{1}^T$ is a projection matrix and from exercise 2, we know that $\mathbf{I} - \mathbf{P}$ is also a projection matrix.
-\end{frame}
-
-\begin{frame}
-\frametitle{Problem 5}
 The Jacobian matrix in this case is
 
 $$\begin{pmatrix} \frac{\partial x}{\partial r} & \frac{\partial x}{\partial \theta} \\ \frac{\partial y}{\partial r} & \frac{\partial y}{\partial \theta}\end{pmatrix} = \begin{pmatrix} \cos \theta & -r \sin \theta \\ \sin \theta & r \cos \theta \end{pmatrix}$$
