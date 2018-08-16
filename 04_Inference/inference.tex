@@ -185,7 +185,7 @@ f(\mathbf{x}|\mu) &= \prod_{i=1}^n (2\pi \sigma^2)^{-1/2} \exp(-(x_i - \mu)^2/(2
 \end{aligned}
 $$
 ~\\
-- What if $\sigma^2$ is also unknown? \\
+- If $\sigma^2$ is also unknown, what is the sufficient statistic of $\theta=(\mu,\sigma^2)$ ?\\
 % Answer: $T_1(X) = \bar{X}$ and $T_2(X) = S^2 = \sum_{i=1}^n(X_i - \bar{X})^2/(n-1)$
 \end{frame}
 
@@ -254,19 +254,17 @@ $$
 
 \begin{frame}
 \frametitle{MLE: Normal Example}
-Let $X_1,\ldots,X_n$ be i.i.d. $N(\theta,1)$, and let $L(\theta|\mathbf{x})$ denote the likelihood function. Since
+Let $X_1,\ldots,X_n$ be i.i.d. $N(\theta,1)$, and let $L(\theta|\mathbf{x})$ denote the likelihood function. Since maximizing
 $$
 L(\theta|\mathbf{x}) = \frac{1}{(2\pi)^{n/2}}e^{(-1/2)\sum_{i=1}^n(x_i-\theta)^2},
 $$
-the equation $\frac{d}{d \theta}L(\theta|\mathbf{x})=0$ reduces to
+is equivalent to maximizing $\ln L(\theta|\mathbf{x})$, which reduces to maxizing 
 $$
-\sum_{i=1}^n (x_i - \theta)=0,
+h(\theta)=(-1/2)\sum_{i=1}^n(x_i-\theta)^2,
 $$
-which has the solution $\hat{\theta}=\bar{x}=(\sum_{i=1}^n x_i)/n$. Moreover, we can verify that
-$$
-\frac{d^2}{d\theta^2}L(\theta|\mathbf{x})\vert_{\theta=\bar{x}} < 0,
-$$
-so $\hat{\theta}$ is a local maximum of $L(\theta|\mathbf{x})$. However, $L(\theta|\mathbf{x})$ is a strictly convex function, so $\hat{\theta}$ is the global maximum, and thus the MLE.
+a quadratic function of $\theta$.
+\\~\\
+Since $\hat{\theta}=\bar{x}=(\sum_{i=1}^n x_i)/n$ is the global maxima of $h(\theta)$, it is also the global maximum of $L(\theta|\mathbf{x})$. Therefore $\hat{\theta}$ is the MLE.
 \end{frame}
 
 \begin{frame}
@@ -309,12 +307,13 @@ $$
 
 \begin{frame}
 \frametitle{MSE and Bias: An Exercise}
-Let $X_1,\ldots,X_n$ be i.i.d. $N(\mu,\sigma^2)$, $\bar{X}=(\sum_{i=1}^n X_i)/n$ be the sample mean, and $S^2=\sum_{i=1}^n (X_i-\bar{X})^2/(n-1)$ be the sample variance. Verify that $\bar{X}$ and $S^2$ are unbiased estimators for $\mu$ and $\sigma^2$, respectively, and compute their MSEs.
-%\\ answer: $E(\bar{X}-\mu)=\frac{\sigma^2}{n}$, $E(S^2-\sigma^2)=\frac{2\sigma^4}{n-1}$.
-\vspace*{1in}
+Let $X_1,\ldots,X_n$ be i.i.d. $N(\mu,\sigma^2)$, $\bar{X}=(\sum_{i=1}^n X_i)/n$ be the sample mean, and $S^2=\sum_{i=1}^n (X_i-\bar{X})^2/(n-1)$ be the sample variance. Verify that $\bar{X}$ and $S^2$ are unbiased estimators for $\mu$ and $\sigma^2$, respectively, and compute their MSEs.\\
+(Note: if $Y \sim \chi^2$, then $\text{Var}(Y)=2$.)
+%\\ answer: $E(\bar{X}-\mu)^2=\frac{\sigma^2}{n}$, $E(S^2-\sigma^2)^2=\frac{2\sigma^4}{n-1}$.
+\vspace*{0.6in}
 
 If we adopt the MLE estimator $\hat{\sigma}^2$ for $\sigma^2$ instead, where $\hat{\sigma}^2=\sum_{i=1}^n (X_i-\bar{X})^2/n$. What is the MSE of $\hat{\sigma}^2$ ?
-% \\ answer: \left(\frac{2n-1}{n^2}\right)\sigma^4
+%\\ answer: $\left(\frac{2n-1}{n^2}\right)\sigma^4$
 \vspace*{0.6in}
 \end{frame}
 
@@ -378,7 +377,7 @@ If $T(\mathbf{X})$ is a sufficient statistic for $\theta$ and $\lambda^*(t)$ and
 \frametitle{An Exercise: Normal LRT}
 Let $X_1,\ldots,N_n$ be i.i.d. $N(\theta,1)$. Consider the test $H_0: \theta=\theta_0$ versus $H_1: \theta \neq \theta_0$. Find the LRT statistic and derive the form of the rejection region.
 \\~\\
-%Answer: $\lambda(\mathbf{x})=\exp[-n(\bar{x}-\theta)^2/2]$, and the rejection region $\{\mathbf{x}: \lambda(\mathbf{x})\leq c\}$ can be written as $\{\mathbf{x}:\vert \bar{x}-\theta\vert \geq \sqrt{-2(\log c)/n}\}$.
+%Answer: $\lambda(\mathbf{x})=\exp[-n(\bar{x}-\theta_0)^2/2]$, and the rejection region $\{\mathbf{x}: \lambda(\mathbf{x})\leq c\}$ can be written as $\{\mathbf{x}:\vert \bar{x}-\theta_0\vert \geq \sqrt{-2(\log c)/n}\}$.
 \end{frame}
 
 \begin{frame}
