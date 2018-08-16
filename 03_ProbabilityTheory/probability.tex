@@ -123,7 +123,7 @@ In morse code, information is represented as dots and dashes. Assume the followi
 \mathbb{P}(dot\>\>\> sent) = \frac{3}{7} ;\>\>\>
 \mathbb{P}(dash \>\>\> sent) = \frac{4}{7}
 \end{align*}
-Furthermore, we also know that $\mathbb{P}(dot\>\>\> received | dot \>\>\> sent) = \frac{7}{8}$. Find $\mathbb{P}(dot\>\>\> sent| dot \>\>\> received)$. 
+Furthermore, we also know that $\mathbb{P}(dot\>\>\> received | dot \>\>\> sent) = \frac{7}{8}$ and $\mathbb{P}(dash\>\>\> received | dash \>\>\> sent) = \frac{7}{8}$. Find $\mathbb{P}(dot\>\>\> sent| dot \>\>\> received)$. 
 \end{frame}
 
 \begin{frame}{Conditional Probability - Example Cont.}
@@ -900,7 +900,7 @@ The \textbf{Mahalanobis distance} from $\mathbf{x}$ to $\mathbf{\mu}$ is given b
 
 $$\Delta = \sqrt{(\mathbf{x} - \mathbf{\mu})^T \mathbf{\Sigma}^{-1}(\mathbf{x} - \mathbf{\mu})}$$
 
-An important result is that a random vector $\mathbf{X}$ follows a multivariate distribution if and only if every linear function of $\mathbf{X}$ follows a univariate normal distribution.
+An important result is that a random vector $\mathbf{X}$ follows a multivariate normal distribution if and only if every linear function of $\mathbf{X}$ follows a univariate normal distribution.
 \vspace{5mm}
 
 In linear models, we often assume that $\mathbf{\Sigma} = \sigma^2\mathbf{I_d}$, in which case the density function reduces to
@@ -931,7 +931,7 @@ where $\mathbf{\Sigma}_{XY} = \mathbf{\Sigma}_{YX}^T$.
 \frametitle{Marginal/Conditional Normal Distribution}
 The marginal distribution of $\mathbf{Y}$ is
 
-$$\mathbf{Y} \sim N_{d_2}(\mu_y, \mathbf{\Sigma}_{YY}$$
+$$\mathbf{Y} \sim N_{d_2}(\mu_y, \mathbf{\Sigma}_{YY})$$
 
 The conditional distribution of $\mathbf{Y}$ given that $\mathbf{X} = \mathbf{x}$ is multivariate normal with mean vector and covariance matrix given by
 
