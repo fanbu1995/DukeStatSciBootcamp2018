@@ -123,7 +123,7 @@ In morse code, information is represented as dots and dashes. Assume the followi
 \mathbb{P}(dot\>\>\> sent) = \frac{3}{7} ;\>\>\>
 \mathbb{P}(dash \>\>\> sent) = \frac{4}{7}
 \end{align*}
-Furthermore, we also know that $\mathbb{P}(dot\>\>\> received | dot \>\>\> sent) = \frac{7}{8}$ and $\mathbb{P}(dash\>\>\> received | dash \>\>\> sent) = \frac{7}{8}$. Find $\mathbb{P}(dot\>\>\> sent| dot \>\>\> received)$. 
+Furthermore, we also know that $\mathbb{P}(dot\>\>\> received | dot \>\>\> sent) = \frac{7}{8}$. Find $\mathbb{P}(dot\>\>\> sent| dot \>\>\> received)$. 
 \end{frame}
 
 \begin{frame}{Conditional Probability - Example Cont.}
@@ -900,7 +900,7 @@ The \textbf{Mahalanobis distance} from $\mathbf{x}$ to $\mathbf{\mu}$ is given b
 
 $$\Delta = \sqrt{(\mathbf{x} - \mathbf{\mu})^T \mathbf{\Sigma}^{-1}(\mathbf{x} - \mathbf{\mu})}$$
 
-An important result is that a random vector $\mathbf{X}$ follows a multivariate normal distribution if and only if every linear function of $\mathbf{X}$ follows a univariate normal distribution.
+An important result is that a random vector $\mathbf{X}$ follows a multivariate distribution if and only if every linear function of $\mathbf{X}$ follows a univariate normal distribution.
 \vspace{5mm}
 
 In linear models, we often assume that $\mathbf{\Sigma} = \sigma^2\mathbf{I_d}$, in which case the density function reduces to
@@ -931,7 +931,7 @@ where $\mathbf{\Sigma}_{XY} = \mathbf{\Sigma}_{YX}^T$.
 \frametitle{Marginal/Conditional Normal Distribution}
 The marginal distribution of $\mathbf{Y}$ is
 
-$$\mathbf{Y} \sim N_{d_2}(\mu_y, \mathbf{\Sigma}_{YY})$$
+$$\mathbf{Y} \sim N_{d_2}(\mu_y, \mathbf{\Sigma}_{YY}$$
 
 The conditional distribution of $\mathbf{Y}$ given that $\mathbf{X} = \mathbf{x}$ is multivariate normal with mean vector and covariance matrix given by
 
@@ -1022,9 +1022,9 @@ $$
 \begin{enumerate}
 \item Find the correlation matrix $\rho$ of $\mathbf{X}$
 $$\rho = \begin{pmatrix}
-1 & 0 & 1/6\\
+1 & 0 & 1/\sqrt{6}\\
 0 & 1 & 0\\
-1/6 & 0 & 1
+1/\sqrt{6} & 0 & 1
 \end{pmatrix}$$
 
 \item Find the marginal distribution of $X_2$.
@@ -1043,7 +1043,12 @@ $$\{X_1, X_3\} \sim N\left(\begin{pmatrix} 0 \\ -1 \end{pmatrix} , \begin{pmatri
 \item Find the conditional distribution of $X_1|X_3 = -1$.
 \vspace{5mm}
 
-Using the conditional distribution formula, the conditional distribution of $\{X_1, X_2\}$ given $X_3 = -1$ is
+Using the conditional distribution formula, the conditional distribution of $\{X_1,X_2\}$ given $X_3 = -1$ is
+
+%\begin{align*}
+%\mu &=  0 + 1 \times 1/2 \times 0 =  0 \\
+%\sigma^2 &= 3 - 1 \times 1/2 \times 1 = 5/2
+%\end{align*}
 
 \begin{align*}
 \mu &= \begin{pmatrix} 0 \\ 1 \end{pmatrix} + \begin{pmatrix} 1 \\ 0 \end{pmatrix} (1/2) (0) =  \begin{pmatrix} 0 \\ 1 \end{pmatrix}\\
@@ -1068,7 +1073,7 @@ You can do this using the conditional distribution formula or note that $X_1$ is
 Yes.  Since they are multivariate normally distributed and the pairwise correlation between $X_2$ and $\{X_1, X_3\}$ is 0, they are independent.
 
 \item Are $X_1 + X_2$ and $X_1 - X_2$ independent?\\
-No, the covariance between  $X_1 + X_2$ and $X_1 - X_2$ is nonzero (see next question).  Also, both terms involve $X_1$ and $X_2$ so there's no reason to expect them to be independent.  
+No, the covariance between  $X_1 + X_2$ and $X_1 - X_2$ is nonzero.  Also, both terms involve $X_1$ and $X_2$ so there's no reason to expect them to be independent.  
 \end{enumerate}
 \end{frame}
 
