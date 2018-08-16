@@ -185,7 +185,7 @@ f(\mathbf{x}|\mu) &= \prod_{i=1}^n (2\pi \sigma^2)^{-1/2} \exp(-(x_i - \mu)^2/(2
 \end{aligned}
 $$
 ~\\
-- If $\sigma^2$ is also unknown, what is the sufficient statistic of $\theta=(\mu,\sigma^2)$ ?\\
+%- If $\sigma^2$ is also unknown, what is the sufficient statistic of $\theta=(\mu,\sigma^2)$ ?\\
 % Answer: $T_1(X) = \bar{X}$ and $T_2(X) = S^2 = \sum_{i=1}^n(X_i - \bar{X})^2/(n-1)$
 \end{frame}
 
@@ -308,7 +308,7 @@ $$
 \begin{frame}
 \frametitle{MSE and Bias: An Exercise}
 Let $X_1,\ldots,X_n$ be i.i.d. $N(\mu,\sigma^2)$, $\bar{X}=(\sum_{i=1}^n X_i)/n$ be the sample mean, and $S^2=\sum_{i=1}^n (X_i-\bar{X})^2/(n-1)$ be the sample variance. Verify that $\bar{X}$ and $S^2$ are unbiased estimators for $\mu$ and $\sigma^2$, respectively, and compute their MSEs.\\
-(Note: if $Y \sim \chi^2$, then $\text{Var}(Y)=2$.)
+(Note: if $Y \sim \chi^2_k$, then $\text{Var}(Y)=2k$.)
 %\\ answer: $E(\bar{X}-\mu)^2=\frac{\sigma^2}{n}$, $E(S^2-\sigma^2)^2=\frac{2\sigma^4}{n-1}$.
 \vspace*{0.6in}
 
