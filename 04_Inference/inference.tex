@@ -349,9 +349,9 @@ If we adopt the MLE estimator $\hat{\sigma}^2$ for $\sigma^2$ instead, where $\h
 \href{https://youtu.be/VK-rnA3-41c}{\textbf{Video tutorial}, by \textit{mathtutordvd}}
 \end{frame}
 
-\begin{frame}
-\frametitle{Challenge Exercises: Morning Session}
-\end{frame}
+%\begin{frame}
+%\frametitle{Challenge Exercises: Morning Session}
+%\end{frame}
 
 \begin{frame}
 \frametitle{Hypothesis Testing: Likelihood Ratio Tests}
@@ -459,7 +459,7 @@ Construct the test statistic (here $\bar{X}$ is the sample mean, and $S$ is the 
 $$
 Z = \frac{\bar{X} - 1.2}{S/\sqrt{100}}.
 $$
-$Z \sim t_{99}$, which is approximately $N(0,1)$. Plug in the observed data, $\bar{x} = 1.05, s = 0.5$, and $z=-3$, so the p-value is approximately $P(\vert W \vert \geq \vert z \vert) = P(\vert W \vert \geq 3) \approx 0.003$ (let $W \sim N(0,1)$), suggesting strong evidence that $H_1$ is true.
+$Z \sim t_{99}$, which is approximately $N(0,1)$. Plug in the observed data, $\bar{x} = 1.05, s = 0.5$, and $z=-3$, so the p-value is approximately $P(\vert W \vert \geq \vert z \vert) = P(\vert W \vert \geq 3) \approx 0.003$ (let $W \sim N(0,1)$).%, suggesting strong evidence that $H_1$ is true.
 \end{frame}
 
 
@@ -503,14 +503,14 @@ Suppose that $X$ is a random sample from a distribution with parameter $\theta$,
 
 \begin{frame}
 \frametitle{Example: Normal Confidence Interval}
-If $X_1,\ldots,X_n$ are i.i.d. $N(\mu,\sigma^2)$ with $\sigma^2$ known, then $Z=(\bar{X}-\mu)/(\sigma/\sqrt{n})$ is a pivot quantity ($Z \sim N(0,1)$). Then a confidence interval of $\theta$ can be
+If $X_1,\ldots,X_n$ are i.i.d. $N(\mu,\sigma^2)$ with $\sigma^2$ known, then $Z=(\bar{X}-\mu)/(\sigma/\sqrt{n})$ is a standard normal variable ($Z \sim N(0,1)$). Then a confidence interval of $\mu$ can be
 $$
 \{\mu: \bar{x}-a\frac{\sigma}{\sqrt{n}} \leq \mu \leq \bar{x}+a\frac{\sigma}{\sqrt{n}}\},
 $$
 where $a$ is a constant. \\
 If $\sigma^2$ is unknown, then $T_{n-1}=(\bar{X}-\mu)/(S/\sqrt{n}) \sim t_{n-1}$ which is independent of $\mu$. Thus, for any given $\alpha \in (0,1)$, a $1-\alpha$ confidence interval of $\mu$ is given by
 $$
-\{\mu: \bar{x}-t_{n-1,(1-\alpha)/2}\frac{s}{\sqrt{n}} \leq \mu \leq \bar{x}+t_{n-1,(1-\alpha)/2}\frac{s}{\sqrt{n}}\},
+\{\mu: \bar{x}-t_{n-1,(1-\alpha/2)}\frac{s}{\sqrt{n}} \leq \mu \leq \bar{x}+t_{n-1,(1-\alpha/2)}\frac{s}{\sqrt{n}}\},
 $$
 where $t_{df,p}$ is the $p\times 100\%$th quantile of a student-$t$ distribution with $df$ degrees of freedom.
 \end{frame}
@@ -565,7 +565,7 @@ R: \url{https://goo.gl//cxfnYK}
 \begin{enumerate}
 \item For each numerical value $\theta \in \Theta$, the \textbf{prior distribution} $p(\theta)$ describes our belief that $\theta$ represents the true population characteristics;
 \item For each $\theta \in \Theta$ and $y \in \mathcal{Y}$, the \textbf{sampling model} $p(y|\theta)$ describes our belief that $y$ would be the outcome of the study if we knew $\theta$ to be true;
-\item For each numerical value of $\theta \in \Theta$, the \textbf{posterior distribution} $p(\theta|y)$ describes out belief that $\theta$ is the true value, having observed dataset $y$.
+\item For each numerical value of $\theta \in \Theta$, the \textbf{posterior distribution} $p(\theta|y)$ describes our belief that $\theta$ is the true value, having observed dataset $y$.
 \end{enumerate}
 \end{frame}
 
