@@ -264,7 +264,7 @@ h(\theta)=(-1/2)\sum_{i=1}^n(x_i-\theta)^2,
 $$
 a quadratic function of $\theta$.
 \\~\\
-Since $\hat{\theta}=\bar{x}=(\sum_{i=1}^n x_i)/n$ is the global maxima of $h(\theta)$, it is also the global maxima of $L(\theta|\mathbf{x})$. Therefore $\hat{\theta}$ is the MLE.
+Since $\hat{\theta}=\bar{x}=(\sum_{i=1}^n x_i)/n$ is the global maximum point of $h(\theta)$, it is also the global maximum point of $L(\theta|\mathbf{x})$. Therefore $\hat{\theta}$ is the MLE.
 \end{frame}
 
 \begin{frame}
@@ -375,7 +375,7 @@ If $T(\mathbf{X})$ is a sufficient statistic for $\theta$ and $\lambda^*(t)$ and
 
 \begin{frame}
 \frametitle{An Exercise: Normal LRT}
-Let $X_1,\ldots,N_n$ be i.i.d. $N(\theta,1)$. Consider the test $H_0: \theta=\theta_0$ versus $H_1: \theta \neq \theta_0$. Find the LRT statistic and derive the form of the rejection region.
+Let $X_1,\ldots,X_n$ be i.i.d. $N(\theta,1)$. Consider the test $H_0: \theta=\theta_0$ versus $H_1: \theta \neq \theta_0$. Find the LRT statistic and derive the form of the rejection region.
 \\~\\
 %Answer: $\lambda(\mathbf{x})=\exp[-n(\bar{x}-\theta_0)^2/2]$, and the rejection region $\{\mathbf{x}: \lambda(\mathbf{x})\leq c\}$ can be written as $\{\mathbf{x}:\vert \bar{x}-\theta_0\vert \geq \sqrt{-2(\log c)/n}\}$.
 \end{frame}
