@@ -1,15 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Beamer Presentation
-% LaTeX Template
-% Version 1.0 (10/11/12)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% License:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %----------------------------------------------------------------------------------------
 %	PACKAGES AND THEMES
@@ -148,8 +136,9 @@ $$
 if for any $\epsilon > 0$, there exists $\delta > 0$ such that \\
 $$
 \vert f(x)-L \vert < \epsilon \text{ whenever } 
-\vert x-a \vert < \delta.
+0 < \vert x-a \vert < \delta.
 $$
+(The value of $f(x)$ approaches $L$ when $x$ approaches $a$.)
 \\~\\
 \textbf{Left-hand limit}:
 $\lim_{x\rightarrow a^{-}}f(x) = L$ if for any $\epsilon > 0$, there exists $\delta > 0$ such that
@@ -161,7 +150,7 @@ $\lim_{x\rightarrow a^{+}}f(x) = L$ if for any $\epsilon > 0$, there exists $\de
 $\vert f(x)-L \vert < \epsilon$ whenever
 $ a < x < a+\delta$.
 
-\end{frame}
+ \end{frame}
 
 %------------------------------------------------
 
@@ -186,6 +175,32 @@ $ a < x < a+\delta$.
 \vspace*{1.5in}
 \item How to define $\lim_{x \rightarrow \infty}f(x) = a$ for $-\infty < a < +\infty$ ?
 \vspace*{1.5in}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Infinite Limit/Limit at Infinity}
+\begin{itemize}
+\item How to define $\lim_{x \rightarrow a}f(x) = \infty$ for $-\infty < a < +\infty$ ?
+
+\vspace*{0.1in}
+For any $M > 0$, there exists $\delta > 0$ such that
+$$
+f(x) > M \text{ whenever } 
+0 < \vert x-a \vert < \delta.
+$$
+(The value of $f(x)$ approaches $\infty$ when $x$ approaches $a$.)
+\vspace*{0.2in}
+\item How to define $\lim_{x \rightarrow \infty}f(x) = a$ for $-\infty < a < +\infty$ ?
+
+\vspace*{0.1in}
+For any $\epsilon > 0$, there exists a $M > 0$ such that
+$$
+\vert f(x)-a \vert < \epsilon \text{ whenever } 
+x > M.
+$$
+(The value of $f(x)$ approaches $a$ when $x$ approaches $\infty$.)
+\vspace*{0.2in}
 \end{itemize}
 \end{frame}
 
@@ -234,7 +249,7 @@ This function is discontinuous at $x=5$.
 This function is discontinuous (but right continuous) at any integer $x$.
 
 \end{columns}
-\end{frame}
+ \end{frame}
 
 % \begin{frame}
 % \frametitle{Other Useful Continuity Notions}
@@ -350,24 +365,10 @@ If $f$ has a local minimum or maximum at $c$ and $f'(c)$ exists, then $f'(c)=0$.
 \begin{theorem}[The Second Derivative Test]
 If $f$ has second derivative on $(c-\epsilon_0,c+\epsilon_0)$ for a certain $\epsilon_0 > 0$, then
 \begin{itemize}
-\item if $f'(c)=$ and $f'(c) > 0$, $f$ has a local minimum at $c$;
-\item if $f'(c)=$ and $f'(c) < 0$, $f$ has a local maximum at $c$.
+\item if $f'(c)= 0 $ and $f'(c) > 0$, $f$ has a local minimum at $c$;
+\item if $f'(c)= 0$ and $f'(c) < 0$, $f$ has a local maximum at $c$.
 \end{itemize}
 \end{theorem}
-\end{frame}
-
-\begin{frame}
-\frametitle{Minimum and Maximum: Example}
-Let $v_1$ be the velocity of light in air and $v_2$ the velocity of light in water. According to Fermat's Principle, a ray of light will travel from a point $A$ in the air to a point $B$ in the water by a path $ACB$ that \textbf{minimizes} the time taken. Then
-$$
-\frac{\sin \theta_1}{\sin \theta_2} = \frac{v_1}{v_2},
-$$
-where $\theta_1$ is the angle of incidence and $\theta_2$ is the angle of refraction. This equation is known as \textbf{Snell's Law}.
-\begin{figure}
-\centering
-\includegraphics[width=5.5cm]{Snells-Law.png}
-\end{figure}
-
 \end{frame}
 
 \begin{frame}
@@ -426,37 +427,11 @@ Any local minimum of a convex function is also a global minimum; a strictly conv
 \begin{frame}
 \frametitle{Taylor Expansion}
 
-\href{https://youtu.be/3d6DsjIBzJ4}{\textbf{Talor Series}, by \textit{3Blue1Brown}}
+\href{https://youtu.be/3d6DsjIBzJ4}{\textbf{Taylor Series}, by \textit{3Blue1Brown}}
 \end{frame}
 
 \begin{frame}
 \frametitle{Challenge Exercises: Morning Session}
-\begin{columns}[t] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
-
-\column{.47\textwidth} % Left column and width
-1. Find the Taylor expansion of $f(x) = \tan x$ around $0$ and use the result to show that $\lim_{x \rightarrow 0} \frac{\tan x}{x} = 1$.
-\\~\\
-2. Calculate $\sum_{x=0}^{\infty} \frac{e^{-\lambda}\lambda^x}{x!}$. Here $\lambda > 0$ is a constant and $x \in \mathbb{N}$. ($0!=1$.)
-% Use the Taylor expansion of $f(x) = e^x$ around $0$.
-\\~\\
-3. Let $f(x) = x^{\alpha - 1}(1-x)^{\beta-1}, x\in (0,1)$, where $\alpha, \beta > 0$ are constants. Find all the minimums and maximums (if there are any) of $f$.
-
-\column{.47\textwidth} % Right column and width
-% 4. $f(x)$ is a convex function on $\mathbb{R}$, $P = (x_0,f(x_0))$ is a point on $f(x)$, and $l$ is the tangent line of the curve of $f(x)$ at $P$. Choose the correct statement(s).
-% \begin{itemize}
-% \item[A] $l$ must lie above or on the curve of $f(x)$;
-% \item[B] $l$ must lie below or on the curve of $f(x)$;
-% \item[C] $l$ can intersect with $f(x)$ at multiple points.
-% \end{itemize}
-4. The following figure shows the graphs of $f$, $f'$, $f''$, and $f'''$. Identify each curve.
-\vspace*{-0.2in}
-\begin{figure}[H]
-\centering
-\includegraphics[width=5.5cm]{Derivative-ex-1.png}
-\end{figure}
-% Answer: d,c,b,a
-
-\end{columns}
 \end{frame}
 
 %------------------------------------------------
@@ -480,12 +455,12 @@ Let $a \leq d \leq b \in \mathbb{R}$:
 \frametitle{The Fundamental Theorem of Calculus}
 If $f$ is continuous on $[a,b]$, then:
 \begin{itemize}
-\item function $g(x) = \int_a^x f(x) dx, a\leq x \leq b$ is continuous on $[a,b]$ and differentiable on $(a,b)$, and $g'(x) = f(x)$;
+\item function $g(x) = \int_a^x f(s) ds, a\leq x \leq b$ is continuous on $[a,b]$ and differentiable on $(a,b)$, and $g'(x) = f(x)$;
 \item $\int_a^b f(x)dx = F(b)-F(a)$, where $F$ is any anti-derivative of $f$ ($F' = f$).
 \end{itemize}
 \vspace*{0.15in}
 A mini-exercise: 
-find $\frac{d}{dx}\int_1^x \sin x^4 dx$.
+find $\frac{d}{dx}\int_1^x \sin t^4 dt$.
 
 \end{frame}
 
@@ -508,7 +483,7 @@ $$
 \begin{enumerate}
 \item Calculate $\int_{1}^e \frac{\ln x}{x} dx$.
 \vspace*{1.2in}
-\item Calculate $\int_{0}^1 x \cos x dx$.
+\item Calculate $\int_{0}^{\pi} x \cos x dx$.
 \vspace*{1.2in}
 \end{enumerate}
 \end{frame}
@@ -531,48 +506,56 @@ if this limit exists; similarly, if $f$ is continuous on $(a,b]$ and is disconti
 \end{frame}
 
 \begin{frame}
-\frametitle{Improper Integrals: Exercises}
-\begin{enumerate}
-\item For what values of $p \in \mathbb{R}$ is the integral
+%\frametitle{Improper Integrals: Exercises}
+\frametitle{Improper Integrals: Mini-Exercise}
+%\begin{enumerate}
+%\item For what values of $p \in \mathbb{R}$ is the integral
+%$$
+%\int_1^{\infty} \frac{1}{x^p} dx
+%$$
+%convergent?
+%% answer: convergent if $p>1$ and divergent if $p \leq 1$.
+%\vspace*{1in}
+%\item Evaluate $\int_2^5 \frac{1}{\sqrt{x-2}} dx$.
+%% answer: 2\sqrt{3}.
+%\vspace*{1.2in}
+%\end{enumerate}
+For what values of $p \in \mathbb{R}$ is the integral
 $$
 \int_1^{\infty} \frac{1}{x^p} dx
 $$
 convergent?
-% answer: convergent if $p>1$ and divergent if $p \leq 1$.
-\vspace*{1in}
-\item Evaluate $\int_2^5 \frac{1}{\sqrt{x-2}} dx$.
-% answer: 2\sqrt{3}.
 \vspace*{1.2in}
-\end{enumerate}
 \end{frame}
 
 %------------------------------------------------
 
-\section{Sequences and Series}
-\begin{frame}
-\frametitle{Basics of Sequences}
-A \textbf{sequence }is a list of numbers written in a definite order. We often denote a sequence $\{a_1,a_2,a_3,\ldots\}$ by $\{a_n\}$ or $\{a_n\}_{n=1}^{\infty}$.
-\\~\\
-A sequence $\{a_n\}$ has \textbf{limit} $L$ (written as $\lim_{n \rightarrow \infty} a_n = L$, or $a_n \rightarrow L$ as $n\rightarrow \infty$) if for every $\epsilon > 0$ there is a corresponding integer $N$ such that $\vert a_n - L \vert < \epsilon$ whenever $n > N$.
-\\~\\
-If for every $n \in \mathbb{N}$, $a_n \leq a_{n+1}$ (increasing) or $a_n \geq a_{n+1}$ (decreasing), then the sequence $\{a_n\}$ is \textbf{monotonic}. If there exists a number $M > 0$ such that $\vert a_n \vert \leq M$ for every $n$ then the sequence $\{a_n\}$ is \textbf{bounded}.
-\\~\\
-\textbf{Monotonic Sequence Theorem:} Every bounded, monotonic sequence is convergent (has a limit).
-\end{frame}
-
-\begin{frame}
-\frametitle{Sequences: Exercises}
-\begin{enumerate}
-\item Find the limit of the sequence ${a_n}$ where $a_n = \left(1+\frac{1}{n}\right)^n$, $n \in \mathbb{N}$.
-\vspace*{1.2in}
-\item Let $a_n = \frac{2^n}{n!}$, $n \in \mathbb{N}$. Is the sequence ${a_n}$ convergent? If so, what is its limit?
-\vspace*{1.2in}
-\end{enumerate}
-\end{frame}
+%\section{Sequences and Series}
+\section{Series}
+%\begin{frame}
+%\frametitle{Basics of Sequences}
+%A \textbf{sequence }is a list of numbers written in a definite order. We often denote a sequence $\{a_1,a_2,a_3,\ldots\}$ by $\{a_n\}$ or $\{a_n\}_{n=1}^{\infty}$.
+%\\~\\
+%A sequence $\{a_n\}$ has \textbf{limit} $L$ (written as $\lim_{n \rightarrow \infty} a_n = L$, or $a_n \rightarrow L$ as $n\rightarrow \infty$) if for every $\epsilon > 0$ there is a corresponding integer $N$ such that $\vert a_n - L \vert < \epsilon$ whenever $n > N$.
+%\\~\\
+%If for every $n \in \mathbb{N}$, $a_n \leq a_{n+1}$ (increasing) or $a_n \geq a_{n+1}$ (decreasing), then the sequence $\{a_n\}$ is \textbf{monotonic}. If there exists a number $M > 0$ such that $\vert a_n \vert \leq M$ for every $n$ then the sequence $\{a_n\}$ is \textbf{bounded}.
+%\\~\\
+%\textbf{Monotonic Sequence Theorem:} Every bounded, monotonic sequence is convergent (has a limit).
+%\end{frame}
+%
+%\begin{frame}
+%\frametitle{Sequences: Exercises}
+%\begin{enumerate}
+%\item Find the limit of the sequence ${a_n}$ where $a_n = \left(1+\frac{1}{n}\right)^n$, $n \in \mathbb{N}$.
+%\vspace*{1.2in}
+%\item Let $a_n = \frac{2^n}{n!}$, $n \in \mathbb{N}$. Is the sequence ${a_n}$ convergent? If so, what is its limit?
+%\vspace*{1.2in}
+%\end{enumerate}
+%\end{frame}
 
 \begin{frame}
 \frametitle{Basics of Series}
-A \textbf{series} can be thought of as the infinite sum of a sequence ${a_n}$, written as $\sum_{n=1}^{\infty} a_n$ or $\sum a_n$. More formally, it can be defined by taking the limit of partial sums $\{s_n\}$, where $s_n = \sum_{i=1}^{n} a_i$: if $\lim_{n \rightarrow \infty} s_n$ exists then the series $\sum a_n$ is convergent, otherwise it is divergent.
+A \textbf{series} can be thought of as the infinite sum of a sequence $\{a_n\}$, written as $\sum_{n=1}^{\infty} a_n$ or $\sum a_n$. More formally, it can be defined by taking the limit of partial sums $\{s_n\}$, where $s_n = \sum_{i=1}^{n} a_i$: if $\lim_{n \rightarrow \infty} s_n$ exists then the series $\sum a_n$ is convergent, otherwise it is divergent.
 \\~\\
 If $\sum_{n=1}^{\infty} a_n$ is convergent, then $\lim_{n \rightarrow \infty} a_n = 0$.
 \\~\\
@@ -585,17 +568,17 @@ $\sum_{n=1}^{\infty} ar^{n-1} = \frac{a}{1-r}$.
 If $\vert r \vert \geq 1$, the geometric series is divergent.
 \end{frame}
 
-\begin{frame}
-\frametitle{Series: Exercises}
-\begin{enumerate}
-\item Show that $\sum_{n=1}^{\infty} \frac{1}{n(n+1)}$ is convergent and find its sum.
-% answer: 1; simplify the expression of the partial sum and take the limit.
-\vspace*{1.2in}
-\item Find $\sum_{n=0}^{\infty} x^n$ where $\vert x \vert < 1$.
-% answer: $\frac{1}{1-x}$.
-\vspace*{1.2in}
-\end{enumerate}
-\end{frame}
+%\begin{frame}
+%\frametitle{Series: Exercises}
+%\begin{enumerate}
+%\item Show that $\sum_{n=1}^{\infty} \frac{1}{n(n+1)}$ is convergent and find its sum.
+%% answer: 1; simplify the expression of the partial sum and take the limit.
+%\vspace*{1.2in}
+%\item Find $\sum_{n=0}^{\infty} x^n$ where $\vert x \vert < 1$.
+%% answer: $\frac{1}{1-x}$.
+%\vspace*{1.2in}
+%\end{enumerate}
+%\end{frame}
 
 \begin{frame}
 \frametitle{Convergence of Series}
@@ -609,7 +592,7 @@ Commonly used tests for convergence:
 \end{itemize}
 %\item \textbf{The limit comparison test}: Suppose that $\sum a_n$ and $\sum b_n$ are series with positive terms. If $\lim_{n \rightarrow \infty} \frac{a_n}{b_n} = c$ where $c$ is a finite positive number, then either both series converge or both diverge.
 \item \href{https://youtu.be/xRyXz_UZ14Q}{\textbf{The integral test} (by \textit{Khan Academy})}.
-\item \textbf{The alternating series test}: If the alternating series $\sum_{n=1}^{\infty} (-1)^{n-1} b_n$ ($b_n > 0$) satisfies (i) $b_{n+1} \leq b_n$ for all $n$, and (ii) $\lim_{n \rightarrow \infty} b_n = 0$ then the series is convergent.
+%\item \textbf{The alternating series test}: If the alternating series $\sum_{n=1}^{\infty} (-1)^{n-1} b_n$ ($b_n > 0$) satisfies (i) $b_{n+1} \leq b_n$ for all $n$, and (ii) $\lim_{n \rightarrow \infty} b_n = 0$ then the series is convergent.
 \end{enumerate}
 \end{frame}
 
@@ -718,9 +701,9 @@ $$
 \begin{enumerate}
 \item Let $f(x,y,z)=ye^x \ln z + z \tan z$ ($z \in (0,\frac{\pi}{2})$) and $g(x,y,z)=x^3y+y^3z+z^5+\sqrt{xy}z$.\\ Compute $\frac{\partial f}{\partial y}$, $\frac{\partial f}{\partial z}$, $\frac{\partial g}{\partial x}$, and $\frac{\partial g}{\partial y}$.
 %\\~\\ answer: $e^x \ln z$, $\frac{ye^x}{z}+\tan z + \frac{z}{\cos^2 z}$, $3x^2y + \frac{\sqrt{y}z}{2\sqrt{x}}$, and $x^3 + 3y^2 z + \frac{\sqrt{x}z}{2\sqrt{y}}$.
-\vspace*{0.5in}
-\item $f(x,y) = \frac{1}{\sqrt{2\pi y^2}}e^{-\frac{(x-s)^2}{2y^2}}$, where $s \in \mathbb{R}$ is a constant. Obtain the gradient vector and Hessian matrix of $f$.
-\vspace*{0.5in}
+\vspace*{0.3in}
+\item $f(x,y) = \frac{1}{\sqrt{2\pi y^2}}e^{-\frac{(x-s)^2}{2y^2}}$, where $s \in \mathbb{R}$ is a constant, and $y>0$. Obtain the gradient vector and Hessian matrix of $g(x,y)=\ln f(x,y)$.
+\vspace*{0.3in}
 \item Evaluate the double integral $\int_1^3 \int_0^2 (xy + x^2y^3)dydx$.
 \end{enumerate}
 
@@ -733,37 +716,16 @@ $$
 %------------------------------------------------
 \begin{frame}
 \frametitle{Challenge Exercises: Afternoon Session}
-\begin{columns}[t] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
 
-\column{.47\textwidth} % Left column and width
-1. Given that $\int_1^{\infty} \frac{1}{x} dx = \infty$ and $\sum_{n=1}^{\infty} \frac{1}{n} = \infty$, use two methods to show that $\sum_{n=1}^{\infty} \frac{1}{n^p} = \infty$ for any $p \in (0,1)$.
-\\~\\
-%2. Find $\lim_{x\rightarrow 3} \frac{x}{x-3} \int_{3}^{x} \frac{\sin t}{t} dt$.
-2. Evaluate the following definite integrals:
-\begin{itemize}
-\item $\int_0^1 \frac{2x}{1+x^4} dx$.
-% answer: $\pi/4$
-\item $\int_0^{\pi} e^x\sin xdx$.
-% answer: $(e^{\pi}+1)/2$
-\end{itemize}
-%~\\
-\column{.47\textwidth} % Right column and width
-3. The Gamma function $\Gamma (x)$ is defined for any real number $x > 0$ as $\Gamma (x) = \int_{0}^{\infty} t^{x-1}e^{-t}dt$. Show that $\Gamma (x+1) = x\Gamma (x)$.
-% Use integration by parts.
-\\~\\
-4. Evaluate $\int_{0}^{\infty} e^{x^2} dx$.\\
-(Hint: start with $\int_{0}^{\infty}\int_{0}^{\infty} e^{x^2+y^2} dxdy$.)
-%\\~\\
-\end{columns}
 
 \end{frame}
 
 
 %------------------------------------------------
 
-\begin{frame}
-\Huge{\centerline{The End}}
-\end{frame}
+% \begin{frame}
+% \Huge{\centerline{The End}}
+% \end{frame}
 
 %----------------------------------------------------------------------------------------
 
