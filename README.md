@@ -1,5 +1,5 @@
 # DukeStatSciBootcamp2018
-This is the slide deck for the 2018 math bootcamp for the incoming Statistical Science Masters and PhD students at Duke University. 
+This is the slide deck for the 2018 math bootcamp for the incoming Statistical Science Masters and PhD students at Duke University (co-instructed with Kyle Burris). 
 
 The short bootcamp consists of 4 parts, aiming at refreshing students on pre-requisite knowledge for graduate-level Statistics courses:
 1. Calculus 
